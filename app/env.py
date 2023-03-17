@@ -24,3 +24,7 @@ mysql_var = {'host': 'admin:123456789@meu-consultorio-app-mysql.cdx7o2bfslfc.us-
 'secret_key' : 'segredo',
 'driver' : 'mysql+pymysql'
 }
+
+
+
+
