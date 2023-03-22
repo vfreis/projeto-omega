@@ -7,7 +7,11 @@ from .controllers import *
 
 views = Blueprint('views', __name__)
 
-@views.route('/home', methods = ['GET', 'POST'])
 @views.route('/', methods = ['GET', 'POST'])
 def home():
-    return render_template('index.html', _user = current_user)
+    return render_template('index.html')
+
+@views.route('/teste', methods = ['GET', 'POST'])
+def teste():
+    #teste
+    return(adc_usuario('vinicios', '17/07/1991', 'm', 'email', '11999999999', '123456798'))
