@@ -15,3 +15,4 @@ def home():
 def teste():
     #teste
     return(adc_usuario('vinicios', '17/07/1991', 'm', 'email', '11999999999', '123456798'))
+
