@@ -15,8 +15,8 @@ def get_usuario(_nome):
 # adc_usuario('vinicios', '17/07/1991', 'm', 'email', '11999999999', '123456798')
 # adc_usuario('gabriela', '17/07/1991', 'm', 'email', '11888888888', '123456798')
 
-def delete_user(_cpf):
-    usuario_var = Usuario.query.get(cpf= _cpf)
+def delete_user(nome):
+    usuario_var = Usuario.query.get(nome= nome)
     db.session.delete(usuario_var)
     db.session.commit()
     return 'usuario deletado com sucesso'
