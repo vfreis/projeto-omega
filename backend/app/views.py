@@ -13,5 +13,6 @@ def home():
 @views.route('/teste', methods = ['GET', 'POST'])
 def teste():
     #teste
-    return(delete_usuario('2'))
+    return(update_user("2", 'will', '1999-07-26', 'f', 'g.@teste.com', '2222222222', '123456'))
+    #return(adc_usuario('gabi', '1999-07-26', 'f', 'g.@teste.com', '1111111111', '123456'))
 
