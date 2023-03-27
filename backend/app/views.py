@@ -10,8 +10,11 @@ views = Blueprint('views', __name__)
 def home():
     return render_template('index.html')
 
-@views.route('/cadastro', methods = ['GET', 'POST'])
+@views.route('/cadastrar', methods = ['GET', 'POST'])
 def cadastrar():
+    if request.method == 'GET':
+        return render_template('index.html')
+
     if request.method == 'POST':
         nome = request.form['nome']
         data_nascimento = request.form['data_nascimento']
@@ -19,6 +22,8 @@ def cadastrar():
         email = request.form['email']
         telefone = request.form['telefone']
         senha = request.form['senha']
+        adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)
+    return f'{nome}, adicionado! <a href="/">Clique aqui</a> para voltar'
 
 @views.route('/teste', methods = ['GET', 'POST'])
 def teste():
