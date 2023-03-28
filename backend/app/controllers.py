@@ -22,14 +22,12 @@ def delete_usuario(_id):
 
 def update_user(_id, _nome, _data_nascimento, _sexo, _email, _telefone, _senha):
     usuario = Usuario.query.get(_id)
-
     usuario.nome = _nome
     usuario.data_nascimento = _data_nascimento
     usuario.sexo = _sexo
     usuario.email = _email
     usuario.telefone = _telefone
     usuario.senha = _senha
-
     db.session.commit()
 
     return usuario.nome + ' atualizado'
