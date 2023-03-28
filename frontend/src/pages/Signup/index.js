@@ -74,13 +74,6 @@ const navigate = useNavigate();
           value={telefone}
           onChange={(e) => [setTelefone(e.target.value), setError("")]}
         />
-        {/* <Input
-          type="email"
-          placeholder="Confirme seu E-mail"
-          value={emailConf}
-          required
-          onChange={(e) => [setEmailConf(e.target.value), setError("")]}
-        /> */}
         <Input
           type="password"
           placeholder="Digite sua Senha"
