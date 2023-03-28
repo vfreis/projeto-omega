@@ -14,7 +14,7 @@ const Signin = () => {
   const [error, setError] = useState("");
 
   const handleLogin = () => {
-    if (!email | !senha) {
+    if (!email | !senha ) {
       setError("Preencha todos os campos");
       return;
     }
@@ -33,12 +33,13 @@ const Signin = () => {
     <C.Container>
       <C.Label>SISTEMA DE LOGIN</C.Label>
       <C.Content>
-        <Input
-          type="email"
-          placeholder="Digite seu E-mail"
-          value={email}
-          onChange={(e) => [setEmail(e.target.value), setError("")]}
-        />
+      
+          <Input
+            type="email"
+            placeholder="Digite seu E-mail"
+            value={email}
+            onChange={(e) => [setEmail(e.target.value), setError("")]}
+          />   
         <Input
           type="password"
           placeholder="Digite sua Senha"
