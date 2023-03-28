@@ -17,6 +17,8 @@ const [senha, setSenha] = useState("");
 const [error, setError] = useState("");
 const navigate = useNavigate();
 
+
+
   const { signup } = useAuth();
 
   const handleSignup = () => {
@@ -45,18 +47,24 @@ const navigate = useNavigate();
       <Input
           type="text"
           placeholder="Digite seu Nome"
+          name = 'nome'
+          id = 'nome'
           value={nome}
           onChange={(e) => [setNome(e.target.value)]}
         />
          <Input
           type="date"
           placeholder="Data de Nascimento"
+          name = 'data_nascimento'
+          id = 'data_nascimento'
           value={dataNascimento}
           onChange={(e) => [setDataNascimento(e.target.value), setError("")]}
         />
          <Input
           type="text"
           placeholder="Digite seu sexo"
+          name = 'sexo'
+          id = 'sexo'
           value={sexo}
           onChange={(e) => [setSexo(e.target.value), setError("")]}
         />
@@ -64,6 +72,8 @@ const navigate = useNavigate();
         <Input
           type="email"
           placeholder="Digite seu E-mail"
+          name = 'email'
+          id = 'email'
           required
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
@@ -71,12 +81,16 @@ const navigate = useNavigate();
         <Input
           type="int"
           placeholder="(11)999999999"
+          name = 'telefone'
+          id = 'telefone'
           value={telefone}
           onChange={(e) => [setTelefone(e.target.value), setError("")]}
         />
         <Input
           type="password"
           placeholder="Digite sua Senha"
+          name = 'senha'
+          id = 'senha'
           required
           value={senha}
           onChange={(e) => [setSenha(e.target.value), setError("")]}
