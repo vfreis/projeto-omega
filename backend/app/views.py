@@ -25,6 +25,21 @@ def cadastrar():
         adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)
     return f'{nome}, adicionado! <a href="/">Clique aqui</a> para voltar'
 
+
+#rota para integrar com react através de json
+@views.route('/inserircadastro', methods =  ['POST'])
+def inserircadastro():
+    data = request.json
+    nome = data.get('nome')
+    data_nascimento = data.get('data_nascimento')
+    sexo = data.get('sexo')
+    email = data.get('email')
+    telefone = data.get('telefone')
+    senha = data.get('senha')
+    adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)
+    return data
+
+
 @views.route('/teste', methods = ['GET', 'POST'])
 def teste():
     #teste
