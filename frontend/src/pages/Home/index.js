@@ -28,7 +28,7 @@ const Home = () => {
             <Nav.Link href="#home">Contatos</Nav.Link>
             <Nav.Link href="#features">Login</Nav.Link>
             <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
-            <Button id="btnHome" Text="Sair" onClick={() => [signout(), navigate("/")]}>
+            <Button className="btnHome" Text="Sair" onClick={() => [signout(), navigate("/")]}>
           Sair
         </Button>
           </Nav>
