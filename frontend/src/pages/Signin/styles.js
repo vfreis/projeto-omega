@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 10px;
   height: 100vh;
+  background-color: #f2f2f2;
 `;
 
 export const Content = styled.div`
@@ -47,3 +48,56 @@ export const Strong = styled.strong`
     color: #676767;
   }
 `;
+
+
+
+// import styled from "styled-components";
+
+// export const Container = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+//   background-color: #f2f2f2;
+// `;
+
+// export const Label = styled.h1`
+//   font-size: 2rem;
+//   font-weight: 700;
+//   text-align: center;
+//   margin-bottom: 2rem;
+// `;
+
+// export const Content = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   background-color: white;
+//   border-radius: 8px;
+//   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+//   padding: 2rem;
+// `;
+
+// export const labelError = styled.span`
+//   font-size: 0.8rem;
+//   color: red;
+//   margin-bottom: 1rem;
+// `;
+
+// export const LabelSignup = styled.p`
+//   font-size: 0.8rem;
+//   margin-top: 1rem;
+//   text-align: center;
+// `;
+
+// export const Strong = styled.strong`
+//   font-weight: bold;
+//   color: blue;
+//   cursor: pointer;
+//   transition: color 0.2s;
+
+//   &:hover {
+//     color: darkblue;
+//   }
+// `;
+
+// export default { Container, Label, Content, labelError, LabelSignup, Strong };
