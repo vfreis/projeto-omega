@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de Cliente</title>
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		input, select {
+			margin-bottom: 10px;
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			width: 300px;
+			font-size: 16px;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Agendamento</h1>
+	<form>
+		
+
+		<label for="estado">estado:</label>
+		<input type="text" id="estado" name="estado" required>
+
+		<label for="especialidade">especialidade:</label>
+		<input type="text" id="especialidade" name="especialidade" required>
+
+		<label for="regiao">regiao:</label>
+		<input type="text" id="regiao" name="regiao" required>
+
+		<label for="unidade">unidade:</label>
+		<input type="text" id="unidade" name="unidade" required>
+
+		<label for="procedimento">procedimento:</label>
+		<input type="text" id="procedimento" name="procedimento" required>
+
+		<label for="profissional">profissional:</label>
+		<input type="text" id="profissional" name="profissional" required>
+
+        <label for="data">data:</label>
+		<input type="date" id="data" name="data" required>
+
+        <label for="time">hora:</label>
+		<input type="time" id="time" name="time" required>
+
+        <label for="dia">dia:</label>
+		<select id="text" name="dia" required>
+			<option value="">Selecione o dia da semana</option>
+			<option value="D">domingo</option>
+			<option value="S">segunda</option>
+			<option value="T">terca</option>
+            <option value="Q">quarta</option>
+            <option value="q">quinta</option>
+            <option value="S">sexta</option>
+            <option value="s">sabado</option>
+		</select>
+
+		<input type="submit" value="Cadastrar">
+	</form>
