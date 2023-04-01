@@ -24,5 +24,5 @@ class Schedule(db.Model):
     local = db.Column(db.String(150))
     data = db.Column(db.Date)
     hora = db.Column(db.Time)
-    dia = db.Column(db.Time)
+    dia = db.Column(db.String(10))
     id_usuario = db.Column(db.Integer, db.ForeignKey('id_usuario'),nullable=False)
