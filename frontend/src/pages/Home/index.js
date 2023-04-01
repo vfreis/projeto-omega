@@ -17,19 +17,23 @@ const Home = () => {
         <Container>
           <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
           <Nav className="ms-auto">
-            {user && ( // se o usuário estiver autenticado, renderize os links de contato e sobre nós
+            {user ? ( // se o usuário estiver autenticado, renderize apenas os links de Agendamento e Sair
               <>
-                <Nav.Link href="#home">Contatos</Nav.Link>
-                <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
+                <Nav.Link onClick={() => navigate("/Agendamento")}>Agendamento</Nav.Link>
+                <Nav.Link onClick={() => [signout(), navigate("/")]} >Sair</Nav.Link>
+              </>
+            ) : ( // se o usuário não estiver autenticado, renderize apenas os links de Login e Cadastro
+              <>
+                <Nav.Link href="#login">Login</Nav.Link>
+                <Nav.Link href="#cadastro">Cadastro</Nav.Link>
               </>
             )}
-            <Nav.Link onClick={() => [signout(), navigate("/")]}>Sair</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
 
       <C.Container>
-        <C.Title>Olá {user.nome}! Seja bem-vindo(a).</C.Title>
+        <C.Title>Olá Seja bem-vindo(a).</C.Title>
       </C.Container>
     </>
   );

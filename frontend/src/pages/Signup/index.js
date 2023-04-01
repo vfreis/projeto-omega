@@ -6,6 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "bootstrap/dist/css/bootstrap.css";
 
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+
 const Signup = () => {
   const [nome, setNome] = useState("");
   const [dataNascimento, setDataNascimento] = useState("");
@@ -43,6 +47,19 @@ const Signup = () => {
   };
 
   return (
+  <>
+      <Navbar bg="primary" variant="dark">
+        <Container>
+          <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
+          <Nav className="ms-auto">
+            
+                <Nav.Link href="#home">Contatos</Nav.Link>
+                <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    
+
     <C.Container>
       <C.Label>SISTEMA DE LOGIN</C.Label>
       <C.Content>
@@ -107,6 +124,7 @@ const Signup = () => {
         </C.LabelSignin>
       </C.Content>
     </C.Container>
+    </>
   );
 };
 
