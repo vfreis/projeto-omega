@@ -13,17 +13,18 @@ const Signin = () => {
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = () => {
-    if (!email | !senha ) {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (!email | !senha) {
       setError("Preencha todos os campos");
-      return;
+      return false;
     }
 
-    const res = signin(email, senha);
+    const res = await signin(email, senha);
 
-    if (res) {
-      setError(res);
-      return;
+    if (!res.success) {
+      setError(res.message);
+      return false;
     }
 
     navigate("/home");
@@ -32,14 +33,13 @@ const Signin = () => {
   return (
     <C.Container>
       <C.Label>SISTEMA DE LOGIN</C.Label>
-      <C.Content>
-      
-          <Input
-            type="email"
-            placeholder="Digite seu E-mail"
-            value={email}
-            onChange={(e) => [setEmail(e.target.value), setError("")]}
-          />   
+      <C.Content onSubmit={(e) => handleLogin(e)}>
+        <Input
+          type="email"
+          placeholder="Digite seu E-mail"
+          value={email}
+          onChange={(e) => [setEmail(e.target.value), setError("")]}
+        />
         <Input
           type="password"
           placeholder="Digite sua Senha"
@@ -47,7 +47,8 @@ const Signin = () => {
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
         <C.labelError>{error}</C.labelError>
-        <Button Text="Entrar" onClick={handleLogin} />
+        <Button Text="Entrar" Type="submit" />
+
         <C.LabelSignup>
           Não tem uma conta?
           <C.Strong>

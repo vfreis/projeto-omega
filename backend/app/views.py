@@ -36,8 +36,14 @@ def inserircadastro():
     email = data.get('email')
     telefone = data.get('telefone')
     senha = data.get('senha')
-    adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)
-    return data
+    return adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)    
+
+@views.route('/login', methods =  ['POST'])
+def post_login():
+    data = request.json
+    email = data.get('email')
+    senha = data.get('senha')
+    return login(email,senha)    
 
 
 @views.route('/teste', methods = ['GET', 'POST'])
@@ -45,4 +51,3 @@ def teste():
     #teste
     return(update_user("2", 'will', '1999-07-26', 'f', 'g.@teste.com', '2222222222', '123456'))
     #return(adc_usuario('gabi', '1999-07-26', 'f', 'g.@teste.com', '1111111111', '123456'))
-

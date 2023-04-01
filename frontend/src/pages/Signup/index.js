@@ -4,34 +4,37 @@ import Button from "../../components/Button";
 import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import 'bootstrap/dist/css/bootstrap.css';
-
+import "bootstrap/dist/css/bootstrap.css";
 
 const Signup = () => {
-const [nome, setNome] = useState('');
-const [dataNascimento, setDataNascimento] = useState('');
-const [sexo, setSexo] = useState('');
-const [email, setEmail] = useState("");
-const [telefone, setTelefone] = useState('');
-const [senha, setSenha] = useState("");
-const [error, setError] = useState("");
-const navigate = useNavigate();
-
-
+  const [nome, setNome] = useState("");
+  const [dataNascimento, setDataNascimento] = useState("");
+  const [sexo, setSexo] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [senha, setSenha] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const { signup } = useAuth();
 
-  const handleSignup = () => {
-    if (!nome | !dataNascimento | !sexo |  !email| !telefone | !senha) {
+  const handleSignup = async () => {
+    if (!nome | !dataNascimento | !sexo | !email | !telefone | !senha) {
       setError("Preencha todos os campos");
       return;
-
     }
 
-    const res = signup(nome, dataNascimento, sexo, email, telefone, senha);
+    const res = await signup(
+      nome,
+      dataNascimento,
+      sexo,
+      email,
+      telefone,
+      senha
+    );
 
-    if (res) {
-      setError(res);
+    if (!res.success) {
+      setError(res.message);
       return;
     }
 
@@ -43,37 +46,36 @@ const navigate = useNavigate();
     <C.Container>
       <C.Label>SISTEMA DE LOGIN</C.Label>
       <C.Content>
-
-      <Input
+        <Input
           type="text"
           placeholder="Digite seu Nome"
-          name = 'nome'
-          id = 'nome'
+          name="nome"
+          id="nome"
           value={nome}
           onChange={(e) => [setNome(e.target.value)]}
         />
-         <Input
+        <Input
           type="date"
           placeholder="Data de Nascimento"
-          name = 'data_nascimento'
-          id = 'data_nascimento'
+          name="data_nascimento"
+          id="data_nascimento"
           value={dataNascimento}
           onChange={(e) => [setDataNascimento(e.target.value), setError("")]}
         />
-         <Input
+        <Input
           type="text"
           placeholder="Digite seu sexo"
-          name = 'sexo'
-          id = 'sexo'
+          name="sexo"
+          id="sexo"
           value={sexo}
           onChange={(e) => [setSexo(e.target.value), setError("")]}
         />
-        
+
         <Input
           type="email"
           placeholder="Digite seu E-mail"
-          name = 'email'
-          id = 'email'
+          name="email"
+          id="email"
           required
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
@@ -81,16 +83,16 @@ const navigate = useNavigate();
         <Input
           type="int"
           placeholder="(11)999999999"
-          name = 'telefone'
-          id = 'telefone'
+          name="telefone"
+          id="telefone"
           value={telefone}
           onChange={(e) => [setTelefone(e.target.value), setError("")]}
         />
         <Input
           type="password"
           placeholder="Digite sua Senha"
-          name = 'senha'
-          id = 'senha'
+          name="senha"
+          id="senha"
           required
           value={senha}
           onChange={(e) => [setSenha(e.target.value), setError("")]}
