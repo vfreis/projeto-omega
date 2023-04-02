@@ -5,6 +5,11 @@ import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
+
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+
 const Signin = () => {
   const { signin } = useAuth();
   const navigate = useNavigate();
@@ -13,33 +18,46 @@ const Signin = () => {
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = () => {
-    if (!email | !senha ) {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (!email | !senha) {
       setError("Preencha todos os campos");
-      return;
+      return false;
     }
 
-    const res = signin(email, senha);
+    const res = await signin(email, senha);
 
-    if (res) {
-      setError(res);
-      return;
+    if (!res.success) {
+      setError(res.message);
+      return false;
     }
 
     navigate("/home");
   };
 
   return (
+    
+    <>
+    <Navbar bg="primary" variant="dark">
+      <Container>
+        <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
+        <Nav className="ms-auto">
+          
+              <Nav.Link href="#home">Contatos</Nav.Link>
+              <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
+    
     <C.Container>
       <C.Label>SISTEMA DE LOGIN</C.Label>
-      <C.Content>
-      
-          <Input
-            type="email"
-            placeholder="Digite seu E-mail"
-            value={email}
-            onChange={(e) => [setEmail(e.target.value), setError("")]}
-          />   
+      <C.Content onSubmit={(e) => handleLogin(e)}>
+        <Input
+          type="email"
+          placeholder="Digite seu E-mail"
+          value={email}
+          onChange={(e) => [setEmail(e.target.value), setError("")]}
+        />
         <Input
           type="password"
           placeholder="Digite sua Senha"
@@ -47,7 +65,8 @@ const Signin = () => {
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
         <C.labelError>{error}</C.labelError>
-        <Button Text="Entrar" onClick={handleLogin} />
+        <Button Text="Entrar" Type="submit" />
+
         <C.LabelSignup>
           Não tem uma conta?
           <C.Strong>
@@ -56,7 +75,14 @@ const Signin = () => {
         </C.LabelSignup>
       </C.Content>
     </C.Container>
+    </>
   );
 };
 
 export default Signin;
+
+
+
+
+
+    

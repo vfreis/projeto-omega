@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_cors import CORS
 from .env import mysql_var
 
 db = SQLAlchemy()
@@ -13,6 +14,7 @@ def create_app():
     from .views import views
 
     app = Flask(__name__)
+    CORS(app)
     app.config['SQLALCHEMY_DATABASE_URI'] = f'''{mysql_var['driver']}://{mysql_var['host']}:{mysql_var['port']}/{mysql_var['database']}'''
     # app.config['SQLALCHEMY_DATABASE_URI'] = f'{DB_HOST}'
     app.config['SECRET_KEY'] = mysql_var['secret_key']

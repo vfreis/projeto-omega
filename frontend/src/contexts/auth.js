@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { login, signupApi } from "../services/api";
 
 export const AuthContext = createContext({});
 
@@ -18,45 +19,34 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const signin = (email, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
+  const signin = async (email, senha) => {
+    const { data } = await login({ email, senha });
 
-    const hasUser = usersStorage?.filter((user) => user.email === email);
-
-    if (hasUser?.length) {
-      if (hasUser[0].email === email && hasUser[0].password === password) {
-        const token = Math.random().toString(36).substring(2);
-        localStorage.setItem("user_token", JSON.stringify({ email, token }));
-        setUser({ email, password });
-        return;
-      } else {
-        return "E-mail ou senha incorretos";
-      }
+    if (data) {
+      const token = Math.random().toString(36).substring(2);
+      localStorage.setItem("user_token", JSON.stringify({ email, token }));
+      setUser({ email, senha });
+      return { success: true, message: "" };
     } else {
-      return "Usuário não cadastrado";
+      return { success: false, message: "E-mail ou senha incorretos" };
     }
   };
 
-  const signup = (nome, dataNascimento, sexo, email, telefone, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
+  const signup = async (nome, dataNascimento, sexo, email, telefone, senha) => {
+    const { data } = await signupApi({
+      nome,
+      dataNascimento,
+      sexo,
+      email,
+      telefone,
+      senha,
+    });
 
-    const hasUser = usersStorage?.filter((user) => user.email === email);
-
-    if (hasUser?.length) {
-      return "Já tem uma conta com esse E-mail";
+    if (data === "exists") {
+      return { success: false, message: "Já tem uma conta com esse E-mail" };
     }
 
-    let newUser;
-
-    if (usersStorage) {
-      newUser = [...usersStorage, { nome, dataNascimento, sexo, email, telefone, password}];
-    } else {
-      newUser = [{ nome, dataNascimento, sexo, email, telefone, password }];
-    }
-
-    localStorage.setItem("users_bd", JSON.stringify(newUser));
-
-    return;
+    return { success: true, message: "" };
   };
 
   const signout = () => {
