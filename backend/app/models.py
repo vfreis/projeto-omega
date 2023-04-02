@@ -10,11 +10,11 @@ class Usuario(db.Model):
     email = db.Column(db.String(150))
     telefone = db.Column(db.String(150))
     senha = db.Column(db.String(150))
-    agenda = db.relationship('Schedule')
+    agenda = db.relationship('Agenda', backref='usuario', lazy=True)
 
-class Schedule(db.Model):
+class Agenda(db.Model):
     __tablename__ = 'agenda'
-    id_schedule = db.Column(db.Integer, primary_key = True, autoincrement = True)
+    id_agenda = db.Column(db.Integer, primary_key = True, autoincrement = True)
     estado = db.Column(db.String(50))
     especialidade = db.Column(db.String(100))
     regiao = db.Column(db.String(20))
@@ -22,7 +22,7 @@ class Schedule(db.Model):
     procedimento = db.Column(db.String(50))
     profissional = db.Column(db.String(50))
     local = db.Column(db.String(150))
-    data = db.Column(db.Date)
+    data = db.Column(db.DateTime)
     hora = db.Column(db.Time)
     dia = db.Column(db.String(10))
-    id_usuario = db.Column(db.Integer, db.ForeignKey('id_usuario'),nullable=False)
+    id_usuario = db.Column(db.Integer, db.ForeignKey('usuario.id'))
