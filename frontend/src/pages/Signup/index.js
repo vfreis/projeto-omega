@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Form from 'react-bootstrap/Form';
 
 const Signup = () => {
   const [nome, setNome] = useState("");
@@ -41,13 +42,19 @@ const Signup = () => {
       setError(res.message);
       return;
     }
-
+    
     alert("Usuário cadatrado com sucesso!");
     navigate("/");
+
   };
 
   return (
   <>
+    <form>
+
+
+
+
       <Navbar bg="primary" variant="dark">
         <Container>
           <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
@@ -79,14 +86,12 @@ const Signup = () => {
           value={dataNascimento}
           onChange={(e) => [setDataNascimento(e.target.value), setError("")]}
         />
-        <Input
-          type="text"
-          placeholder="Digite seu sexo"
-          name="sexo"
-          id="sexo"
-          value={sexo}
-          onChange={(e) => [setSexo(e.target.value), setError("")]}
-        />
+        <Form.Select aria-label="Default select example" onChange={(e) => [setSexo(e.target.value), setError("")]} >
+        <option>Sexo</option>
+        <option value="Masculino">Masculino</option>
+        <option id="sexo" value="Feminino">Feminino</option>
+        <option value="Biron">Sei lá</option>
+        </Form.Select>
 
         <Input
           type="email"
@@ -115,7 +120,7 @@ const Signup = () => {
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
         <C.labelError>{error}</C.labelError>
-        <Button Text="Inscrever-se" onClick={handleSignup} />
+        <Button text="Inscrever-se" onClick={handleSignup} />
         <C.LabelSignin>
           Já tem uma conta?
           <C.Strong>
@@ -124,6 +129,7 @@ const Signup = () => {
         </C.LabelSignin>
       </C.Content>
     </C.Container>
+    </form>
     </>
   );
 };

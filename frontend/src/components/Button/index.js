@@ -1,10 +1,10 @@
 import React from "react";
 import * as C from "./styles";
 
-const Button = ({ Text, onClick, Type = "button", bgColor }) => {
+const Button = ({ text, onClick, Type = "button", bgColor }) => {
   return (
     <C.Button type={Type} onClick={onClick} bgColor={bgColor}>
-      {Text}
+      {text}
     </C.Button>
   );
 };
