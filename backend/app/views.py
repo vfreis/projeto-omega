@@ -65,7 +65,7 @@ def teste():
     #return(adc_usuario('gabi', '1999-07-26', 'f', 'f.@teste.com', '1111111111', '123456'))
     #return(delete_usuario('3'))
 
-    return(adc_agenda('sao paulo', 'neuro', 'leste', 'todas', 'presencial', 'dra fernanda', 'impacta', '23-04-2023', '15:00:00', 'segunda', 3))
+    return(adc_agenda('Sao paulo', 'odonto', 'oeste', 'barra funda', 'gabi','2023-04-21','15:00', 3 ))
     #return(delete_agenda(3))
     #return(select_agenda())
 
