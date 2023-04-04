@@ -6,3 +6,14 @@
     "telefone" : "telefone",
     "senha" : "123456789"
 }
+
+{
+    "estado": "sp",
+    "especialidade" : "endocrinologista",
+    "regiao" : "sp",
+    "unidade" : "barra-funda",
+    "profissional" : "will medico de cobra",
+    "data" : "2023-04-03",
+    "hora" : "13:00",
+    "id_usuario": 3
+}

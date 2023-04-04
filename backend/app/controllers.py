@@ -47,6 +47,7 @@ def adc_agenda(_estado, _especialidade, _regiao, _unidade, _profissional, _data,
     
     db.session.add(agenda_var)
     db.session.commit()
+    return True
 
 def delete_agenda(_id):
     agenda_var = Agenda.query.filter_by(id_agenda=_id).first()

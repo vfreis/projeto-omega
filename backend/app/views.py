@@ -45,7 +45,20 @@ def post_login():
     senha = data.get('senha')
     return login(email,senha)    
 
+@views.route('/agenda', methods = ['GET', 'POST'])
+def post_agenda():
+    data = request.json
+    estado = data.get('estado')
+    especialidade = data.get('especialidade')
+    regiao = data.get('regiao')
+    unidade = data.get('unidade')
+    profissional = data.get('profissional')
+    data_ = data.get('data')
+    hora = data.get('hora')
+    id_usuario = data.get('id_usuario')
+    return adc_agenda(estado, especialidade, regiao, unidade, profissional, data_, hora, id_usuario)
 
+    # _estado, _especialidade, _regiao, _unidade, _profissional, _data, _hora, _id_usuario
 @views.route('/teste', methods = ['GET', 'POST'])
 def teste():
     #teste
