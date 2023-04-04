@@ -39,11 +39,11 @@ def update_user(_id, _nome, _data_nascimento, _sexo, _email, _telefone, _senha):
     db.session.commit()
     return usuario.nome + ' atualizado'
 
-def adc_agenda(_estado, _especialidade, _regiao, _unidade, _procedimento, _profissional, _local, _data, _hora, _dia, _id_usuario):
+def adc_agenda(_estado, _especialidade, _regiao, _unidade, _profissional, _data, _hora, _id_usuario):
     agenda_var = Agenda(estado = _estado, especialidade = _especialidade,
                        regiao = _regiao, unidade = _unidade,
-                       procedimento = _procedimento, profissional = _profissional, local = _local,
-                       data = _data, hora = _hora, dia = _dia, id_usuario = _id_usuario)
+                       profissional = _profissional, data = _data,
+                       hora = _hora, id_usuario = _id_usuario)
     
     db.session.add(agenda_var)
     db.session.commit()
