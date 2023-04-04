@@ -54,10 +54,9 @@ def delete_agenda(_id):
     db.session.commit()
     return 'deletado com sucesso'
 
-'''def select_agenda(_id):
-    agenda_var = db.session.query(Agenda).filter(Agenda.id_usuario == _id).all()
-    print(agenda_var)
-    return agenda_var''' # erro
+def select_agenda(id_usuario):
+    agenda = Agenda.query.filter(Agenda.id_usuario == id_usuario).all()
+    return agenda
 
 def update_agenda():
     pass
