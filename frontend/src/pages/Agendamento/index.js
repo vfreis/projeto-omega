@@ -151,7 +151,7 @@ const Agendamento = () => {
       />
       
     </div>
-    <div className="col-md-6 mb-3">
+    {/* <div className="col-md-6 mb-3">
   <label htmlFor="horario">Horário:</label>
   <input type="time" id="horario" name="horario"/>
   <select name="horario">
@@ -161,7 +161,7 @@ const Agendamento = () => {
     <option value="11:00">11h</option>
     <option value="12:00">12h</option>
   </select>
-</div>
+</div> */}
     
 
   </div>
