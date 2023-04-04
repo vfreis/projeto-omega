@@ -7,7 +7,9 @@ import useAuth from "../../hooks/useAuth";
 
 
 import Form from 'react-bootstrap/Form';
-
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 const Agendamento = () => {
   const [estado, setEstado] = useState("");
@@ -17,7 +19,7 @@ const Agendamento = () => {
   const [profissional, setProfissional] = useState("");
   const [data, setData] = useState("");
 
-  const { user } = useAuth();
+  const { user, signout } = useAuth();
   const navigate = useNavigate();
 
   const handleEstadoChange = (event) => {
@@ -65,6 +67,29 @@ const Agendamento = () => {
   }
 
   return (
+    <>
+     <Navbar bg="primary" variant="dark">
+        <Container>
+          <Navbar.Brand href={user ? "/home" : "/login"}>
+            Clinica Omega
+          </Navbar.Brand>
+          <Nav className="ms-auto">
+            {user ? (
+              <>
+                <Nav.Link onClick={() => navigate("/agendamento")}>
+                  Agendamento
+                </Nav.Link>
+                <Nav.Link onClick={() => [signout(), navigate("/")]} >Sair</Nav.Link>
+              </>
+            ) : (
+              <>
+                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/cadastro">Cadastro</Nav.Link>
+              </>
+            )}
+          </Nav>
+        </Container>
+      </Navbar>
     <div className="container">
   <h1 className="text-center mb-4">Agendamento de Consulta Médica</h1>
   <div className="row">
@@ -124,13 +149,27 @@ const Agendamento = () => {
         value={data}
         onChange={handleDataChange}
       />
+      
     </div>
+    <div className="col-md-6 mb-3">
+  <label htmlFor="horario">Horário:</label>
+  <input type="time" id="horario" name="horario"/>
+  <select name="horario">
+    <option value="08:00">08h</option>
+    <option value="09:00">09h</option>
+    <option value="10:00">10h</option>
+    <option value="11:00">11h</option>
+    <option value="12:00">12h</option>
+  </select>
+</div>
+    
+
   </div>
   <div className="text-center">
     <Button type="submit" text="Agendar Consulta" />
   </div>
 </div>
-
+</>
   );
 };
 
