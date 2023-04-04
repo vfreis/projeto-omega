@@ -54,10 +54,10 @@ const Agendamento = () => {
   };
 
   const lugaresPorRegiao = {
-    "Zona Norte": ["Unidade Jaçanã", " Unidade Mandaqui", "Unidade Tremembé"],
-    "Zona Leste": ["Unidade Aricanduva", "Unidade Mooca" , "Unidade Belenzinho"],
-    "Zona Oeste": ["Unidade Barra Funda", "Unidade Alto de Pinheiros", "Unidade Lapa"],
-    "Zona Sul": ["Unidade Ipiranga", "Unidade Moema" , "Unidade Jabaquara"],
+    "Zona Norte": [" Avenida Alfredo Barbosa N° 3002 - Jaçanã", " Avenida Adolfo Coelho N°2341 - Mandaqui ", " Vila Jardim Yara N°103 -Tremembé"],
+    "Zona Leste": ["Rua Aricanduva N° 301 - Aricanduva", "Rua da Mooca N°2015 - Mooca" , "Rua Belenzinho N°12 - Belenzinho"],
+    "Zona Oeste": ["Rua da Várzea N°02 - Barra Funda", "Rua Joaquim dos Santos N°100 - Alto de Pinheiros", "Vila Bento Bicudo N°10 - Lapa"],
+    "Zona Sul": ["Rua Ipiranga N°33 - Ipiranga", "Rua Indianópolis N°1245 - Moema" , "Vila Paraguai N°200 - Jabaquara"],
   };
 
   // Verifica se o usuário está autenticado e redireciona para a página de login caso não esteja
@@ -70,12 +70,13 @@ const Agendamento = () => {
     <>
      <Navbar bg="primary" variant="dark">
         <Container>
-          <Navbar.Brand href={user ? "/home" : "/login"}>
+          <Navbar.Brand >
             Clinica Omega
           </Navbar.Brand>
           <Nav className="ms-auto">
             {user ? (
               <>
+              <Nav.Link onClick={() => navigate("/home")}>Home</Nav.Link>
                 <Nav.Link onClick={() => navigate("/agendamento")}>
                   Agendamento
                 </Nav.Link>

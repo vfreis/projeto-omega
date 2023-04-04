@@ -10,10 +10,10 @@ const RoutesApp = () => {
     <BrowserRouter>
       <Fragment>
         <Routes>
-          <Route exact path="/home" element={<Home />} />
-          <Route path="/" element={<Signin />} />
+          <Route exact path="*" element={<Home />} />
+          {/* <Route exact path="/signin" element={<Signin />} /> */}
           <Route exact path="/signup" element={<Signup />} />
-          <Route path="*" element={<Signin />} />
+          { <Route exact path="/signin" element={<Signin />} /> }
           <Route exact path="/agendamento" element={<Agendamento />} />
         </Routes>
       </Fragment>

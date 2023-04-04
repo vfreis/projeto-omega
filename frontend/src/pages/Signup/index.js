@@ -53,8 +53,6 @@ const Signup = () => {
     <form>
 
 
-
-
       <Navbar bg="primary" variant="dark">
         <Container>
           <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
@@ -124,7 +122,7 @@ const Signup = () => {
         <C.LabelSignin>
           Já tem uma conta?
           <C.Strong>
-            <Link to="/">&nbsp;Entre</Link>
+            <Link to="/signin">&nbsp;Entre</Link>
           </C.Strong>
         </C.LabelSignin>
       </C.Content>
