@@ -69,7 +69,7 @@ const Agendamento = () => {
   return (
     <>
       <Navbar bg="primary" variant="dark">
-        <Container>
+        <Container fluid>
           <Navbar.Brand >
             Clinica Omega
           </Navbar.Brand>

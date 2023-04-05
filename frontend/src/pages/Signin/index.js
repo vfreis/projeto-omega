@@ -39,12 +39,13 @@ const Signin = () => {
 
     <>
       <Navbar bg="primary" variant="dark">
-        <Container>
+        <Container fluid>
           <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
           <Nav className="ms-auto">
 
             <Nav.Link href="#home">Contatos</Nav.Link>
             <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
+            <Nav.Link href="/signup">Cadastre-se</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

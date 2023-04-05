@@ -23,9 +23,12 @@ const Home = () => {
           <Nav className="ms-auto">
             {user ? ( // se o usuário estiver autenticado, renderize apenas os links de Agendamento e Sair
               <>
-                <Nav.Link onClick={() => navigate("/home")}>Home</Nav.Link>
+                
                 <Nav.Link onClick={() => navigate("/Agendamento")}>Agendamento</Nav.Link>
+                <Nav.Link href="#">Sobre Nós</Nav.Link>
+                <Nav.Link href="#">Contatos</Nav.Link>
                 <Nav.Link onClick={() => [signout(), navigate("/")]} >Sair</Nav.Link>
+
               </>
             ) : ( // se o usuário não estiver autenticado, renderize apenas os links de Login e Cadastro
               <>
