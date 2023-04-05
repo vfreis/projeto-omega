@@ -6,6 +6,10 @@ import * as C from "./styles";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Carousel from 'react-bootstrap/Carousel';
+import teste from "../../images/teste.jpg";
+import dent from "../../images/dent.jpg"
+import cliente from "../../images/cliente.jpg"
 
 const Home = () => {
   const { user, signout } = useAuth(); // obtém informações do usuário autenticado
@@ -13,8 +17,8 @@ const Home = () => {
 
   return (
     <>
-      <Navbar bg="primary" variant="dark">
-        <Container>
+      <Navbar bg="primary" variant="dark" fixed="top">
+        <Container fluid>
           <Navbar.Brand>Clinica Omega</Navbar.Brand>
           <Nav className="ms-auto">
             {user ? ( // se o usuário estiver autenticado, renderize apenas os links de Agendamento e Sair
@@ -35,9 +39,52 @@ const Home = () => {
         </Container>
       </Navbar>
 
-      <C.Container>
-        <C.Title>Olá Seja bem-vindo(a).</C.Title>
-      </C.Container>
+      <Container fluid>
+        <Carousel slide={false} interval={null} variant="dark">
+          <Carousel.Item>
+            <img 
+              className="d-block w-100"
+              src={teste}
+              alt="First slide"
+              style={{ maxwidth:"50px", maxheight: "10px"}}
+
+            />
+            <Carousel.Caption>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={dent}
+              alt="Second slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={cliente}
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Third slide label</h3>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+
+
+      </Container>
+
     </>
   );
 };

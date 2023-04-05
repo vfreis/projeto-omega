@@ -36,45 +36,45 @@ const Signin = () => {
   };
 
   return (
-    
-    <>
-    <Navbar bg="primary" variant="dark">
-      <Container>
-        <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
-        <Nav className="ms-auto">
-          
-              <Nav.Link href="#home">Contatos</Nav.Link>
-              <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
-        </Nav>
-      </Container>
-    </Navbar>
-    
-    <C.Container>
-      <C.Label>SISTEMA DE LOGIN</C.Label>
-      <C.Content onSubmit={(e) => handleLogin(e)}>
-        <Input
-          type="email"
-          placeholder="Digite seu E-mail"
-          value={email}
-          onChange={(e) => [setEmail(e.target.value), setError("")]}
-        />
-        <Input
-          type="password"
-          placeholder="Digite sua Senha"
-          value={senha}
-          onChange={(e) => [setSenha(e.target.value), setError("")]}
-        />
-        <C.labelError>{error}</C.labelError>
-        <Button text="Entrar" Type="submit" />
 
-        <C.LabelSignup>
-          Não tem uma conta?
-          <C.Strong>
-            <Link to="/signup">&nbsp;Registre-se</Link>
-          </C.Strong>
-        </C.LabelSignup>
-      </C.Content>
-    </C.Container>
+    <>
+      <Navbar bg="primary" variant="dark">
+        <Container>
+          <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
+          <Nav className="ms-auto">
+
+            <Nav.Link href="#home">Contatos</Nav.Link>
+            <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+
+      <C.Container>
+        <C.Label>SISTEMA DE LOGIN</C.Label>
+        <C.Content onSubmit={(e) => handleLogin(e)}>
+          <Input
+            type="email"
+            placeholder="Digite seu E-mail"
+            value={email}
+            onChange={(e) => [setEmail(e.target.value), setError("")]}
+          />
+          <Input
+            type="password"
+            placeholder="Digite sua Senha"
+            value={senha}
+            onChange={(e) => [setSenha(e.target.value), setError("")]}
+          />
+          <C.labelError>{error}</C.labelError>
+          <Button text="Entrar" Type="submit" />
+
+          <C.LabelSignup>
+            Não tem uma conta?
+            <C.Strong>
+              <Link to="/signup">&nbsp;Registre-se</Link>
+            </C.Strong>
+          </C.LabelSignup>
+        </C.Content>
+      </C.Container>
     </>
   );
 };
@@ -85,4 +85,3 @@ export default Signin;
 
 
 
-    

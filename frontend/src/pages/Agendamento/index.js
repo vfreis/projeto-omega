@@ -3,7 +3,7 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth"; 
+import useAuth from "../../hooks/useAuth";
 
 
 import Form from 'react-bootstrap/Form';
@@ -55,9 +55,9 @@ const Agendamento = () => {
 
   const lugaresPorRegiao = {
     "Zona Norte": [" Avenida Alfredo Barbosa N° 3002 - Jaçanã", " Avenida Adolfo Coelho N°2341 - Mandaqui ", " Vila Jardim Yara N°103 -Tremembé"],
-    "Zona Leste": ["Rua Aricanduva N° 301 - Aricanduva", "Rua da Mooca N°2015 - Mooca" , "Rua Belenzinho N°12 - Belenzinho"],
+    "Zona Leste": ["Rua Aricanduva N° 301 - Aricanduva", "Rua da Mooca N°2015 - Mooca", "Rua Belenzinho N°12 - Belenzinho"],
     "Zona Oeste": ["Rua da Várzea N°02 - Barra Funda", "Rua Joaquim dos Santos N°100 - Alto de Pinheiros", "Vila Bento Bicudo N°10 - Lapa"],
-    "Zona Sul": ["Rua Ipiranga N°33 - Ipiranga", "Rua Indianópolis N°1245 - Moema" , "Vila Paraguai N°200 - Jabaquara"],
+    "Zona Sul": ["Rua Ipiranga N°33 - Ipiranga", "Rua Indianópolis N°1245 - Moema", "Vila Paraguai N°200 - Jabaquara"],
   };
 
   // Verifica se o usuário está autenticado e redireciona para a página de login caso não esteja
@@ -68,7 +68,7 @@ const Agendamento = () => {
 
   return (
     <>
-     <Navbar bg="primary" variant="dark">
+      <Navbar bg="primary" variant="dark">
         <Container>
           <Navbar.Brand >
             Clinica Omega
@@ -76,7 +76,7 @@ const Agendamento = () => {
           <Nav className="ms-auto">
             {user ? (
               <>
-              <Nav.Link onClick={() => navigate("/home")}>Home</Nav.Link>
+                <Nav.Link onClick={() => navigate("/home")}>Home</Nav.Link>
                 <Nav.Link onClick={() => navigate("/agendamento")}>
                   Agendamento
                 </Nav.Link>
@@ -91,68 +91,68 @@ const Agendamento = () => {
           </Nav>
         </Container>
       </Navbar>
-    <div className="container">
-  <h1 className="text-center mb-4">Agendamento de Consulta Médica</h1>
-  <div className="row">
-    <div className="col-md-6 mb-3">
-      <Form.Select aria-label="Default select example" onChange={handleEstadoChange}>
-        <option>Estado</option>
-        <option id="estado" value="Estado">São Paulo</option>
-      </Form.Select>
-    </div>
-    <div className="col-md-6 mb-3">
-      <Form.Select aria-label="Default select example" onChange={handleEspecialidadeChange}>
-        <option>Especialidade</option>
-        <option value="1">Ortodontia</option>
-        <option value="2">Endodontia</option>
-        <option value="3">Periodontia</option>
-        <option value="4">Implatodontia</option>
-        <option value="5">Odontologia estética</option>
-        <option value="6">Odontologia preventiva</option>
-      </Form.Select>
-    </div>
-    <div className="col-md-6 mb-3">
-      <Form.Select aria-label="Default select example" onChange={handleRegiaoChange}>
-        <option>Região</option>
-        <option value="Zona Norte">Zona Norte</option>
-        <option value="Zona Leste">Zona Leste</option>
-        <option value="Zona Oeste">Zona Oeste</option>
-        <option value="Zona Sul">Zona Sul</option>
-      </Form.Select>
-    </div>
-    <div className="col-md-6 mb-3">
-      {regiao && (
-        <Form.Select
-          aria-label="Default select example"
-          onChange={handleUnidadeChange}
-          value={unidade}
-          id="unidade"
-        >
-          <option>Unidade</option>
-          {lugaresPorRegiao[regiao].map((lugar) => (
-            <option key={lugar} value={lugar}>
-              {lugar}
-            </option>
-          ))}
-        </Form.Select>
-      )}
-    </div>
-    <div className="col-md-6 mb-3">
-      <Form.Select aria-label="Default select example" onChange={handleProfissionalChange}>
-        <option>Profissional</option>
-        <option id="profissional" value="Profissional">Todos os Profissionais</option>
-      </Form.Select>
-    </div>
-    <div className="col-md-6 mb-3">
-      <Input
-        type="date"
-        placeholder="Data"
-        value={data}
-        onChange={handleDataChange}
-      />
-      
-    </div>
-    {/* <div className="col-md-6 mb-3">
+      <div className="container">
+        <h1 className="text-center mb-4">Agendamento de Consulta Médica</h1>
+        <div className="row">
+          <div className="col-md-6 mb-3">
+            <Form.Select aria-label="Default select example" onChange={handleEstadoChange}>
+              <option>Estado</option>
+              <option id="estado" value="Estado">São Paulo</option>
+            </Form.Select>
+          </div>
+          <div className="col-md-6 mb-3">
+            <Form.Select aria-label="Default select example" onChange={handleEspecialidadeChange}>
+              <option>Especialidade</option>
+              <option value="1">Ortodontia</option>
+              <option value="2">Endodontia</option>
+              <option value="3">Periodontia</option>
+              <option value="4">Implatodontia</option>
+              <option value="5">Odontologia estética</option>
+              <option value="6">Odontologia preventiva</option>
+            </Form.Select>
+          </div>
+          <div className="col-md-6 mb-3">
+            <Form.Select aria-label="Default select example" onChange={handleRegiaoChange}>
+              <option>Região</option>
+              <option value="Zona Norte">Zona Norte</option>
+              <option value="Zona Leste">Zona Leste</option>
+              <option value="Zona Oeste">Zona Oeste</option>
+              <option value="Zona Sul">Zona Sul</option>
+            </Form.Select>
+          </div>
+          <div className="col-md-6 mb-3">
+            {regiao && (
+              <Form.Select
+                aria-label="Default select example"
+                onChange={handleUnidadeChange}
+                value={unidade}
+                id="unidade"
+              >
+                <option>Unidade</option>
+                {lugaresPorRegiao[regiao].map((lugar) => (
+                  <option key={lugar} value={lugar}>
+                    {lugar}
+                  </option>
+                ))}
+              </Form.Select>
+            )}
+          </div>
+          <div className="col-md-6 mb-3">
+            <Form.Select aria-label="Default select example" onChange={handleProfissionalChange}>
+              <option>Profissional</option>
+              <option id="profissional" value="Profissional">Todos os Profissionais</option>
+            </Form.Select>
+          </div>
+          <div className="col-md-6 mb-3">
+            <Input
+              type="date"
+              placeholder="Data"
+              value={data}
+              onChange={handleDataChange}
+            />
+
+          </div>
+          {/* <div className="col-md-6 mb-3">
   <label htmlFor="horario">Horário:</label>
   <input type="time" id="horario" name="horario"/>
   <select name="horario">
@@ -163,14 +163,14 @@ const Agendamento = () => {
     <option value="12:00">12h</option>
   </select>
 </div> */}
-    
 
-  </div>
-  <div className="text-center">
-    <Button type="submit" text="Agendar Consulta" />
-  </div>
-</div>
-</>
+
+        </div>
+        <div className="text-center">
+          <Button type="submit" text="Agendar Consulta" />
+        </div>
+      </div>
+    </>
   );
 };
 
