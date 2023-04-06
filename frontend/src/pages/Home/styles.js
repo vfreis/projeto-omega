@@ -1,4 +1,10 @@
+import Carousel from "react-bootstrap/Carousel";
 import styled from "styled-components";
+
+export const CustomCarousel = styled(Carousel)`
+  background-color: blue;
+`;
+
 
 
 

@@ -1,7 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import * as C from "./styles";
+
+import {  CustomCarousel } from './styles';
+
+
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -42,8 +45,8 @@ const Home = () => {
         </Container>
       </Navbar>
 
-      <Container fluid>
-        <Carousel slide={false} interval={null} variant="dark">
+      <Container fluid >
+        <CustomCarousel variant="" >
           <Carousel.Item>
             <img 
               className="d-block w-100"
@@ -53,7 +56,7 @@ const Home = () => {
 
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
+              <h3>Clinica Omega</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -83,7 +86,7 @@ const Home = () => {
               </p>
             </Carousel.Caption>
           </Carousel.Item>
-        </Carousel>
+        </CustomCarousel>
 
 
       </Container>
