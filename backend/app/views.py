@@ -10,6 +10,12 @@ views = Blueprint('views', __name__)
 def home():
     return render_template('index.html')
 
+@views.route('/getusers')
+def get_users():
+    # return jsonify(get_usuario()
+    # all_users = get_users()
+    return get_users()
+
 @views.route('/cadastrar', methods = ['GET', 'POST'])
 def cadastrar():
     if request.method == 'GET':

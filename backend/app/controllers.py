@@ -1,7 +1,10 @@
+import sys
 from flask import jsonify
 from sqlalchemy import update
 from .models import Agenda, Usuario
 from . import db
+
+sys.setrecursionlimit(2000)
 
 def adc_usuario(_nome, _data_nascimento, _sexo, _email, _telefone, _senha):
     usuario_exists = Usuario.query.filter_by(email = _email).first()
@@ -12,8 +15,9 @@ def adc_usuario(_nome, _data_nascimento, _sexo, _email, _telefone, _senha):
     db.session.commit()
     return True
     
-def get_usuario(_nome):
-    usuario_var = Usuario.query.filter_by(nome = _nome)
+def get_usuario():
+    todos_usuario = Usuario.filter_by(id=1).first()
+    return todos_usuario
 
 def login(_email,_senha):
     usuario_var = Usuario.query.filter_by(email = _email).first()
