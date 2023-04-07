@@ -6,6 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "bootstrap/dist/css/bootstrap.css";
 
+
+
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -63,12 +65,14 @@ const Signup = () => {
             </Nav>
           </Container>
         </Navbar>
-
+       
 
         <C.Container>
-          <C.Label>SISTEMA DE LOGIN</C.Label>
+          <C.Label >SISTEMA DE LOGIN</C.Label>
           <C.Content>
+            
             <Input
+              
               type="text"
               placeholder="Digite seu Nome"
               name="nome"

@@ -2,17 +2,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
-import {  CustomCarousel } from './styles';
 
-
-
+import styles from "../../components/Frase.module.css"
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Carousel from 'react-bootstrap/Carousel';
-import teste from "../../images/teste.jpg";
+import dentista from "../../images/dentista.jpeg";
 import dent from "../../images/dent.jpg"
 import cliente from "../../images/cliente.jpg"
+import logo from "../../images/logo.png"
 
 const Home = () => {
   const { user, signout } = useAuth(); // obtém informações do usuário autenticado
@@ -20,9 +19,11 @@ const Home = () => {
 
   return (
     <>
-      <Navbar bg="primary" variant="dark" fixed="top">
+      <Navbar className={styles.navbar} bg="primary" variant="dark" fixed="top">
         <Container fluid>
-          <Navbar.Brand>Clinica Omega</Navbar.Brand>
+          
+          <img className={styles.imgHome} src={logo}/>
+          
           <Nav className="ms-auto">
             {user ? ( // se o usuário estiver autenticado, renderize apenas os links de Agendamento e Sair
               <>
@@ -46,13 +47,12 @@ const Home = () => {
       </Navbar>
 
       <Container fluid >
-        <CustomCarousel variant="" >
+        <Carousel slide={false} interval={null} variant="dark"  >
           <Carousel.Item>
-            <img 
-              className="d-block w-100"
-              src={teste}
+            <img className={styles.imgCarousel} 
+              src={dentista}
               alt="First slide"
-              style={{ maxwidth:"50px", maxheight: "10px"}}
+              
 
             />
             <Carousel.Caption>
@@ -86,7 +86,7 @@ const Home = () => {
               </p>
             </Carousel.Caption>
           </Carousel.Item>
-        </CustomCarousel>
+        </Carousel>
 
 
       </Container>
