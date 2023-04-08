@@ -4,11 +4,10 @@ import Button from "../../components/Button";
 import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-
-
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+
 
 const Signin = () => {
   const { signin } = useAuth();
@@ -38,17 +37,18 @@ const Signin = () => {
   return (
 
     <>
-      <Navbar bg="primary" variant="dark">
+      <div className="navbar-wrapper">
+      <Navbar bg="primary" variant="dark" sticky="top">
         <Container fluid>
           <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
           <Nav className="ms-auto">
-
             <Nav.Link href="#home">Contatos</Nav.Link>
             <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
             <Nav.Link href="/signup">Cadastre-se</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
+      </div>
 
       <C.Container>
         <C.Label>SISTEMA DE LOGIN</C.Label>

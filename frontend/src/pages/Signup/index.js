@@ -68,7 +68,7 @@ const Signup = () => {
        
 
         <C.Container>
-          <C.Label >SISTEMA DE LOGIN</C.Label>
+          <C.Label >SISTEMA DE CADASTRO </C.Label>
           <C.Content>
             
             <Input

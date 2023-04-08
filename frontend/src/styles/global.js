@@ -5,8 +5,7 @@ const GlobalStyle = createGlobalStyle`
   
 
   body {
-    width: 100%;
-    height: auto;
+    box-sizing:inherit
     background-color: #f0f2f5;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;

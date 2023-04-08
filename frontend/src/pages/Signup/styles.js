@@ -5,23 +5,23 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
-  height: 100vh;
-  
+  height: 100vh; 
+  background-color: rgba(140, 198, 236, 0.603);
 `;
 
 export const Content = styled.div`
-  gap: 15px;
+  gap: 13px;
   display: flex;
+  
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
-  box-shadow: 0 1px 2px #0003;
-  background-color: rgb(126, 185, 233);
+  width: 90%;
   max-width: 350px;
-  padding: 20px;
-  border-radius: 5px;
+  box-shadow: 20px 20px 30px #0003;
+  background-color:  rgba(140, 198, 236, 0.603);
+  padding: 25px;
+  border-radius: 25px;
 `;
 
 export const Label = styled.label`

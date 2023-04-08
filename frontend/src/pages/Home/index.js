@@ -11,7 +11,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import dentista from "../../images/dentista.jpeg";
 import dent from "../../images/dent.jpg"
 import cliente from "../../images/cliente.jpg"
-import logo from "../../images/logo.png"
+
+
+
 
 const Home = () => {
   const { user, signout } = useAuth(); // obtém informações do usuário autenticado
@@ -21,9 +23,7 @@ const Home = () => {
     <>
       <Navbar className={styles.navbar} bg="primary" variant="dark" fixed="top">
         <Container fluid>
-          
-          <img className={styles.imgHome} src={logo}/>
-          
+        <Navbar.Brand>Clinica Omega</Navbar.Brand>
           <Nav className="ms-auto">
             {user ? ( // se o usuário estiver autenticado, renderize apenas os links de Agendamento e Sair
               <>

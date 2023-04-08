@@ -4,6 +4,8 @@ import Button from "../../components/Button";
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import styles from "./modules.css"
+
 
 
 import Form from 'react-bootstrap/Form';
@@ -91,7 +93,7 @@ const Agendamento = () => {
           </Nav>
         </Container>
       </Navbar>
-      <div className="container">
+      <div className="home">
         <h1 className="text-center mb-4">Agendamento de Consulta Médica</h1>
         <div className="row">
           <div className="col-md-6 mb-3">
