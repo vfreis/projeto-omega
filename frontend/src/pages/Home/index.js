@@ -11,6 +11,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import dentista from "../../images/dentista.jpeg";
 import dent from "../../images/dent.jpg"
 import cliente from "../../images/cliente.jpg"
+import odontotop from "../../images/odontotop.png"
 
 
 
@@ -23,7 +24,9 @@ const Home = () => {
     <>
       <Navbar className={styles.navbar} bg="primary" variant="dark" fixed="top">
         <Container fluid>
-        <Navbar.Brand>Clinica Omega</Navbar.Brand>
+          
+          
+         <Navbar.Brand>Clinica Omega</Navbar.Brand> 
           <Nav className="ms-auto">
             {user ? ( // se o usuário estiver autenticado, renderize apenas os links de Agendamento e Sair
               <>
@@ -50,7 +53,7 @@ const Home = () => {
         <Carousel slide={false} interval={null} variant="dark"  >
           <Carousel.Item>
             <img className={styles.imgCarousel} 
-              src={dentista}
+              src={odontotop}
               alt="First slide"
               
 
@@ -63,7 +66,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={dent}
+              src={odontotop}
               alt="Second slide"
             />
 
@@ -75,7 +78,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={cliente}
+              src={odontotop}
               alt="Third slide"
             />
 
