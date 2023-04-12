@@ -13,5 +13,12 @@
 }
 
 .imgTop{
-  width: 150px;
+  margin-top:80px ;
+  width: 100%;
+  height: 90vh; /* Ajuste a altura da imagem aqui */
+  object-fit: contain;
+}
+
+h2,h5{
+  color: blanchedalmond;
 }

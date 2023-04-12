@@ -8,10 +8,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Carousel from 'react-bootstrap/Carousel';
-import dentista from "../../images/dentista.jpeg";
-import dent from "../../images/dent.jpg"
-import cliente from "../../images/cliente.jpg"
-import odontotop from "../../images/odontotop.png"
+// import dentista from "../../images/dentista.jpeg";
+// import dent from "../../images/dent.jpg"
+// import oi from "../../images/oi.png"
+import odonto from "../../images/odonto.png"
 
 
 
@@ -50,23 +50,23 @@ const Home = () => {
       </Navbar>
 
       <Container fluid >
-        <Carousel slide={false} interval={null} variant="dark"  >
+        <Carousel slide={false} interval={null}   >
           <Carousel.Item>
-            <img className={styles.imgCarousel} 
-              src={odontotop}
+            <img className="imgTop" 
+              src={odonto}
               alt="First slide"
               
 
             />
             <Carousel.Caption>
-              <h3>Clinica Omega</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h2>Clinica OdontoTop</h2>
+              <h5>Trate sua saúde bucal com a OdontoTop: tecnologia e eficácia em tratamentos para um sorriso confiante e saudável.</h5>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              src={odontotop}
+              className="imgTop"
+              src={odonto}
               alt="Second slide"
             />
 
@@ -78,7 +78,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={odontotop}
+              src={odonto}
               alt="Third slide"
             />
 

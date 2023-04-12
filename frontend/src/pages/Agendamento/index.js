@@ -68,6 +68,8 @@ const Agendamento = () => {
     return null;
   }
 
+  
+
   return (
     <>
       <Navbar bg="primary" variant="dark">
@@ -154,17 +156,6 @@ const Agendamento = () => {
             />
 
           </div>
-          {/* <div className="col-md-6 mb-3">
-  <label htmlFor="horario">Horário:</label>
-  <input type="time" id="horario" name="horario"/>
-  <select name="horario">
-    <option value="08:00">08h</option>
-    <option value="09:00">09h</option>
-    <option value="10:00">10h</option>
-    <option value="11:00">11h</option>
-    <option value="12:00">12h</option>
-  </select>
-</div> */}
 
 
         </div>
