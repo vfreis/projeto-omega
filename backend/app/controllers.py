@@ -4,7 +4,7 @@ from sqlalchemy import update
 from .models import Agenda, Usuario
 from . import db
 
-sys.setrecursionlimit(2000)
+# sys.setrecursionlimit(2000)
 
 def adc_usuario(_nome, _data_nascimento, _sexo, _email, _telefone, _senha):
     usuario_exists = Usuario.query.filter_by(email = _email).first()
@@ -21,7 +21,7 @@ def get_usuario():
 
 def login(_email,_senha):
     usuario_var = Usuario.query.filter_by(email = _email).first()
-    return "true" if usuario_var and usuario_var.senha == _senha else "false"
+    return True if usuario_var and usuario_var.senha == _senha else False
 #teste
 # adc_usuario('vinicios', '17/07/1991', 'm', 'email', '11999999999', '123456798')
 # adc_usuario('gabriela', '17/07/1991', 'm', 'email', '11888888888', '123456798')

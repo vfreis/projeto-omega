@@ -10,11 +10,11 @@ views = Blueprint('views', __name__)
 def home():
     return render_template('index.html')
 
-@views.route('/getusers')
-def get_users():
-    # return jsonify(get_usuario()
-    # all_users = get_users()
-    return get_users()
+# @views.route('/getusers')
+# def get_users():
+#     # return jsonify(get_usuario()
+#     # all_users = get_users()
+#     return get_users()
 
 @views.route('/cadastrar', methods = ['GET', 'POST'])
 def cadastrar():
@@ -42,7 +42,8 @@ def inserircadastro():
     email = data.get('email')
     telefone = data.get('telefone')
     senha = data.get('senha')
-    return adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)    
+    resposta = adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)
+    return resposta    
 
 @views.route('/login', methods =  ['POST'])
 def post_login():
