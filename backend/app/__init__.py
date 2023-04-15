@@ -35,7 +35,9 @@ def create_app():
     return app
 
 def create_database(app):
-    db.create_all(app = app)
+    with app.app_context():
+        db.create_all()
+    #db.create_all(app = app)
     # try:
     #     db.create_all(app = app)
     #     print('\nDB  : OK')
