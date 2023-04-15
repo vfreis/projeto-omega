@@ -35,8 +35,8 @@ def create_app():
 
     return app
 
-def create_database(_app):
-    db.create_all(app = _app)
+def create_database(app):
+    db.create_all(app = app)
     # try:
     #     db.create_all(app = app)
     #     print('\nDB  : OK')
