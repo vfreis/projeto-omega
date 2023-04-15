@@ -74,9 +74,7 @@ const Agendamento = () => {
     <>
       <Navbar bg="primary" variant="dark">
         <Container fluid>
-          <Navbar.Brand >
-            Clinica Omega
-          </Navbar.Brand>
+          <Navbar.Brand>Clinica OdontoTop</Navbar.Brand> 
           <Nav className="ms-auto">
             {user ? (
               <>

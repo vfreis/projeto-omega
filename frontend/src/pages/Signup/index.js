@@ -57,7 +57,7 @@ const Signup = () => {
 
         <Navbar bg="primary" variant="dark">
           <Container fluid>
-            <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
+            <Navbar.Brand href="home">Clinica OdontoTop</Navbar.Brand>
             <Nav className="ms-auto">
 
               <Nav.Link href="#home">Contatos</Nav.Link>

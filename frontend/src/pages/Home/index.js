@@ -26,7 +26,7 @@ const Home = () => {
         <Container fluid>
           
           
-         <Navbar.Brand>Clinica Omega</Navbar.Brand> 
+         <Navbar.Brand>Clinica OdontoTop</Navbar.Brand> 
           <Nav className="ms-auto">
             {user ? ( // se o usuário estiver autenticado, renderize apenas os links de Agendamento e Sair
               <>

@@ -40,7 +40,7 @@ const Signin = () => {
       <div className="navbar-wrapper">
       <Navbar bg="primary" variant="dark" sticky="top">
         <Container fluid>
-          <Navbar.Brand href="home">Clinica Omega</Navbar.Brand>
+          <Navbar.Brand href="home">Clinica OdontoTop</Navbar.Brand>
           <Nav className="ms-auto">
             <Nav.Link href="#home">Contatos</Nav.Link>
             <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
