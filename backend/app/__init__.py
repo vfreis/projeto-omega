@@ -8,8 +8,9 @@ db = SQLAlchemy()
 # DB_NAME = mysql_var['database']
 # DB_HOST = 'mysql+pymysql://admin:123456789@meu-consultorio-app-mysql.ciofokjqok2t.us-east-1.rds.amazonaws.com:3306/consulta_app_alpha'
 
-def create_app():
 
+def create_app():
+    
     from .models import Usuario
     from .views import views
 
@@ -34,8 +35,8 @@ def create_app():
 
     return app
 
-def create_database(app):
-    db.create_all(app = app)
+def create_database(_app):
+    db.create_all(app = _app)
     # try:
     #     db.create_all(app = app)
     #     print('\nDB  : OK')
