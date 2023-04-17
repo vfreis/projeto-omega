@@ -17,7 +17,7 @@ const Signin = () => {
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = async (e) => {
+  const handleSigin = async (e) => {
     e.preventDefault();
     if (!email | !senha) {
       setError("Preencha todos os campos");
@@ -52,7 +52,7 @@ const Signin = () => {
 
       <C.Container>
         <C.Label>SISTEMA DE LOGIN</C.Label>
-        <C.Content onSubmit={(e) => handleLogin(e)}>
+        <C.Content onSubmit={(e) => handleSigin(e)}>
           <Input
             type="email"
             placeholder="Digite seu E-mail"

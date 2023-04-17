@@ -45,7 +45,7 @@ const Signup = () => {
       return;
     }
 
-    alert("Usuário cadatrado com sucesso!");
+    alert("Usuário cadastrado com sucesso!");
     navigate("/");
 
   };
@@ -92,7 +92,7 @@ const Signup = () => {
               <option>Sexo</option>
               <option value="Masculino">Masculino</option>
               <option id="sexo" value="Feminino">Feminino</option>
-              <option value="Biron">Sei lá</option>
+              {/* <option value="outros">Sei lá</option> */}
             </Form.Select>
 
             <Input
