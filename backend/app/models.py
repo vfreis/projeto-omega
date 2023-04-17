@@ -1,4 +1,5 @@
 from . import db
+import datetime
 # from sqlalchemy import func
 
 class Usuario(db.Model):
@@ -20,6 +21,6 @@ class Agenda(db.Model):
     regiao = db.Column(db.String(20))
     unidade = db.Column(db.String(100))
     profissional = db.Column(db.String(50))
-    data = db.Column(db.DateTime)
+    data = db.Column(db.DateTime(timezone=True), default=datetime.datetime.utcnow)
     hora = db.Column(db.Time)
     id_usuario = db.Column(db.Integer, db.ForeignKey('usuario.id'))
