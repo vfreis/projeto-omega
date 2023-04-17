@@ -16,20 +16,20 @@ def home():
 #     # all_users = get_users()
 #     return get_users()
 
-@views.route('/cadastrar', methods = ['GET', 'POST'])
-def cadastrar():
-    if request.method == 'GET':
-        return render_template('index.html')
+# @views.route('/cadastrar', methods = ['GET', 'POST'])
+# def cadastrar():
+#     if request.method == 'GET':
+#         return render_template('index.html')
 
-    if request.method == 'POST':
-        nome = request.form['nome']
-        data_nascimento = request.form['data_nascimento']
-        sexo = request.form['sexo']
-        email = request.form['email']
-        telefone = request.form['telefone']
-        senha = request.form['senha']
-        adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)
-    return f'{nome}, adicionado! <a href="/">Clique aqui</a> para voltar'
+#     if request.method == 'POST':
+#         nome = request.form['nome']
+#         data_nascimento = request.form['data_nascimento']
+#         sexo = request.form['sexo']
+#         email = request.form['email']
+#         telefone = request.form['telefone']
+#         senha = request.form['senha']
+#         adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)
+#     return f'{nome}, adicionado! <a href="/">Clique aqui</a> para voltar'
 
 
 #rota para integrar com react através de json
@@ -42,8 +42,11 @@ def inserircadastro():
     email = data.get('email')
     telefone = data.get('telefone')
     senha = data.get('senha')
-    resposta = adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)
-    return resposta    
+    try:
+        return adc_usuario(nome, data_nascimento, sexo, email, telefone, senha)
+    except:
+        return 'Failed'
+
 
 @views.route('/login', methods =  ['POST'])
 def post_login():
@@ -63,18 +66,20 @@ def post_agenda():
     data_ = data.get('data')
     hora = data.get('hora')
     id_usuario = data.get('id_usuario')
-    return adc_agenda(estado, especialidade, regiao, unidade, profissional, data_, hora, id_usuario)
+    try:
+        return adc_agenda(estado, especialidade, regiao, unidade, profissional, data_, hora, id_usuario)
+    except:
+        return 'failed'
 
     # _estado, _especialidade, _regiao, _unidade, _profissional, _data, _hora, _id_usuario
 @views.route('/teste', methods = ['GET', 'POST'])
 def teste():
+    pass
     #teste
     #return(adc_usuario('gabi', '1999-07-26', 'f', 'f.@teste.com', '1111111111', '123456'))
     #return(delete_usuario('3'))
 
-    return(adc_agenda('Sao paulo', 'odonto', 'oeste', 'barra funda', 'gabi','2023-04-21','15:00', 3 ))
+    # return(adc_agenda('Sao paulo', 'odonto', 'oeste', 'barra funda', 'gabi','2023-04-21','15:00', 4 ))
     #return(delete_agenda(3))
     #return(select_agenda())
 
-
-    

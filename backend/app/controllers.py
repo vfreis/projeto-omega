@@ -9,11 +9,11 @@ from . import db
 def adc_usuario(_nome, _data_nascimento, _sexo, _email, _telefone, _senha):
     usuario_exists = Usuario.query.filter_by(email = _email).first()
     if usuario_exists and usuario_exists.id : 
-        return 'exists'
+        return 'already exists'
     usuario_var = Usuario(nome = _nome, data_nascimento = _data_nascimento, sexo = _sexo, email = _email, telefone = _telefone, senha = _senha)
     db.session.add(usuario_var)
     db.session.commit()
-    return True
+    return 'user created'
     
 def get_usuario():
     todos_usuario = Usuario.filter_by(id=1).first()
@@ -51,7 +51,13 @@ def adc_agenda(_estado, _especialidade, _regiao, _unidade, _profissional, _data,
     
     db.session.add(agenda_var)
     db.session.commit()
-    return True
+    return 'calendar created'
+
+    # try: 
+    #     db.session.commit()
+    #     return True
+    # except:
+    #     return False
 
 def delete_agenda(_id):
     agenda_var = Agenda.query.filter_by(id_agenda=_id).first()
