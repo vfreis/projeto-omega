@@ -8,10 +8,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Carousel from 'react-bootstrap/Carousel';
-// import dentista from "../../images/dentista.jpeg";
-// import dent from "../../images/dent.jpg"
-// import oi from "../../images/oi.png"
-import odonto from "../../images/odonto.png"
+import odonto1 from "../../images/odonto1.png"
+import odontoTop3 from "../../images/odontoTop3.png"
 
 
 
@@ -53,7 +51,7 @@ const Home = () => {
         <Carousel slide={false} interval={null}   >
           <Carousel.Item>
             <img className="imgTop" 
-              src={odonto}
+              src={odontoTop3}
               alt="First slide"
               
 
@@ -66,7 +64,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="imgTop"
-              src={odonto}
+              src={odonto1}
               alt="Second slide"
             />
 
@@ -78,7 +76,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={odonto}
+              src={odonto1}
               alt="Third slide"
             />
 
