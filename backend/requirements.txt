@@ -4,3 +4,4 @@ flask_cors
 pymysql
 flask_login
 sqlalchemy
+sqlalchemy.sql
