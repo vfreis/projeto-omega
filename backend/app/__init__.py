@@ -24,6 +24,13 @@ def create_app():
     app.register_blueprint(views, url_prefix = '/')
 
     #create_database(app)
+    db.create_all(app = app)
+    try:
+        db.create_all(app = app)
+        print('\nDB  : OK')
+        print('TBL : OK \n')
+    except:
+        print('\n Acessing DB or Creating Tables failed. \n')
 
     login_manager = LoginManager()
     login_manager.login_view = 'view.user'
@@ -35,11 +42,11 @@ def create_app():
 
     return app
 
-def create_database(app):
+'''def create_database(app):
     db.create_all(app = app)
     try:
-        db.create_all(app = app)
+       db.create_all(app = app)
         print('\nDB  : OK')
         print('TBL : OK \n')
     except:
-        print('\n Acessing DB or Creating Tables failed. \n')
+        print('\n Acessing DB or Creating Tables failed. \n')'''
