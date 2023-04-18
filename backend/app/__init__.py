@@ -23,7 +23,7 @@ def create_app():
 
     app.register_blueprint(views, url_prefix = '/')
 
-    create_database(app)
+    #create_database(app)
 
     login_manager = LoginManager()
     login_manager.login_view = 'view.user'
