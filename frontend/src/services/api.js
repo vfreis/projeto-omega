@@ -11,3 +11,7 @@ export const login = async (data) => {
 export const signupApi = async (data) => {
   return await axiosInstance.post("inserircadastro", data);
 };
+
+export const schedule = async (data) => {
+  return await axiosInstance.post("agenda", data);
+};

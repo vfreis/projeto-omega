@@ -8,7 +8,6 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-
 const Signin = () => {
   const { signin } = useAuth();
   const navigate = useNavigate();
@@ -35,19 +34,18 @@ const Signin = () => {
   };
 
   return (
-
     <>
       <div className="navbar-wrapper">
-      <Navbar bg="primary" variant="dark" sticky="top">
-        <Container fluid>
-          <Navbar.Brand href="home">Clinica OdontoTop</Navbar.Brand>
-          <Nav className="ms-auto">
-            <Nav.Link href="#home">Contatos</Nav.Link>
-            <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
-            <Nav.Link href="/signup">Cadastre-se</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+        <Navbar bg="primary" variant="dark" sticky="top">
+          <Container fluid>
+            <Navbar.Brand href="home">Clinica OdontoTop</Navbar.Brand>
+            <Nav className="ms-auto">
+              <Nav.Link href="#home">Contatos</Nav.Link>
+              <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
+              <Nav.Link href="/signup">Cadastre-se</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
       </div>
 
       <C.Container>
@@ -81,8 +79,3 @@ const Signin = () => {
 };
 
 export default Signin;
-
-
-
-
-
