@@ -17,12 +17,14 @@ import "./index.css"
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "gray", color: "white", padding: "10px", textAlign: "center" }}>
+    <footer>
+     
       <p>Contatos:</p>
       <ul style={{ listStyleType: "none", padding: 0 }}>
         <li>Telefone: (11) 32568453</li>
         <li>E-mail: clinicaodontotop@gmail.com</li>
       </ul>
+     
     </footer>
   );
 };
