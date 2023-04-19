@@ -15,7 +15,17 @@ import "./index.css"
 
 
 
-
+const Footer = () => {
+  return (
+    <footer style={{ backgroundColor: "gray", color: "white", padding: "10px", textAlign: "center" }}>
+      <p>Contatos:</p>
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        <li>Telefone: (11) 32568453</li>
+        <li>E-mail: clinicaodontotop@gmail.com</li>
+      </ul>
+    </footer>
+  );
+};
 
 
 
@@ -62,8 +72,8 @@ const Home = () => {
 
             />
             <Carousel.Caption>
-              <h2>Clinica OdontoTop</h2>
-              <h5>Trate sua saúde bucal com a OdontoTop: tecnologia e eficácia em tratamentos para um sorriso confiante e saudável.</h5>
+              <h2 className="texth2">Clinica OdontoTop</h2>
+              <h5 className="texth5">Trate sua saúde bucal com a OdontoTop: tecnologia e eficácia em tratamentos para um sorriso confiante e saudável.</h5>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -73,8 +83,8 @@ const Home = () => {
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h2 className="texth2" >Second slide label</h2>
+              <h5 className="texth5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -84,14 +94,16 @@ const Home = () => {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
+              <h2 className="texth2">Third slide label</h2>
+              <h5 className="texth5">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
+              </h5>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
       </Container>
+
+        <Footer />
 
     </>
   );
