@@ -4,8 +4,6 @@ import Button from "../../components/Button";
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import styles from "./modules.css";
-
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";

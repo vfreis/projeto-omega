@@ -10,6 +10,11 @@ import Navbar from "react-bootstrap/Navbar";
 import Carousel from 'react-bootstrap/Carousel';
 import odonto1 from "../../images/odonto1.png"
 import odontoTop3 from "../../images/odontoTop3.png"
+import "./index.css"
+
+
+
+
 
 
 
@@ -47,10 +52,10 @@ const Home = () => {
         </Container>
       </Navbar>
 
-      <Container fluid >
-        <Carousel slide={false} interval={null}   >
+      <Container fluid className="carousel-container">
+        <Carousel slide={false} interval={null} variant="dark"  >
           <Carousel.Item>
-            <img className="imgTop" 
+            <img className="imgHome" 
               src={odontoTop3}
               alt="First slide"
               
@@ -63,11 +68,10 @@ const Home = () => {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="imgTop"
+              className="imgHome"
               src={odonto1}
               alt="Second slide"
             />
-
             <Carousel.Caption>
               <h3>Second slide label</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -75,11 +79,10 @@ const Home = () => {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100"
+              className="imgHome"
               src={odonto1}
               alt="Third slide"
             />
-
             <Carousel.Caption>
               <h3>Third slide label</h3>
               <p>
@@ -88,8 +91,6 @@ const Home = () => {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-
-
       </Container>
 
     </>

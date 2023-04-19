@@ -1,0 +1,10 @@
+.imgHome{
+   
+    width: 100%;
+    height: 600px;
+    object-fit:fill
+}
+
+.carousel-container{
+    margin-top: 65px;
+}
