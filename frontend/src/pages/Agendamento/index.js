@@ -59,14 +59,35 @@ const Agendamento = () => {
       hora: "00:00:00",
     };
 
-    const res = await schedule(values);
+    // const res = await schedule(values);
 
+    // if (res.data === "calendar created") {
+    //   alert("Agendamento cadastrado com sucesso.");
+    //   navigate("/home");
+    // } else {
+    //   alert("Não foi possível agendar, tente novamente.");
+    // }
+    if (
+      !values.estado ||
+      !values.especialidade ||
+      !values.regiao ||
+      !values.unidade ||
+      !values.profissional ||
+      !values.data
+    ) {
+      alert("Por favor, preencha todos os campos obrigatórios.");
+      return;
+    }
+  
+    const res = await schedule(values);
+  
     if (res.data === "calendar created") {
       alert("Agendamento cadastrado com sucesso.");
       navigate("/home");
     } else {
       alert("Não foi possível agendar, tente novamente.");
     }
+  
   };
 
   const lugaresPorRegiao = {
