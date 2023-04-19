@@ -145,12 +145,12 @@ const Agendamento = () => {
               onChange={handleEspecialidadeChange}
             >
               <option>Especialidade</option>
-              <option value="1">Ortodontia</option>
-              <option value="2">Endodontia</option>
-              <option value="3">Periodontia</option>
-              <option value="4">Implatodontia</option>
-              <option value="5">Odontologia estética</option>
-              <option value="6">Odontologia preventiva</option>
+              <option value="Ortodontia">Ortodontia</option>
+              <option value="Endodontia">Endodontia</option>
+              <option value="Periodontia">Periodontia</option>
+              <option value="Implatodontia">Implatodontia</option>
+              <option value="Odontologia Estética">Odontologia Estética</option>
+              <option value="Odontologia Preventiva">Odontologia Preventiva</option>
             </Form.Select>
           </div>
           <div className="col-md-6 mb-3">
