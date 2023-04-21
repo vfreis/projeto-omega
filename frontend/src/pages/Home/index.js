@@ -11,23 +11,11 @@ import Carousel from 'react-bootstrap/Carousel';
 import odonto1 from "../../images/odonto1.png"
 import odontoTop3 from "../../images/odontoTop3.png"
 import "./index.css"
+import Footer from "../Footer"
 
 
 
 
-const Footer = () => {
-  return (
-    <footer>
-     
-      <p>Contatos:</p>
-      <ul style={{ listStyleType: "none", padding: 0 }}>
-        <li>Telefone: (11) 32568453</li>
-        <li>E-mail: clinicaodontotop@gmail.com</li>
-      </ul>
-     
-    </footer>
-  );
-};
 
 
 
@@ -65,7 +53,7 @@ const Home = () => {
       </Navbar>
 
       <Container fluid className="carousel-container">
-        <Carousel slide={false} interval={null} variant="dark"  >
+        <Carousel  slide={false} interval={3500} variant="dark"  >
           <Carousel.Item>
             <img className="imgHome" 
               src={odontoTop3}
@@ -74,8 +62,8 @@ const Home = () => {
 
             />
             <Carousel.Caption>
-              <h2 className="texth2">Clinica OdontoTop</h2>
-              <h5 className="texth5">Trate sua saúde bucal com a OdontoTop: tecnologia e eficácia em tratamentos para um sorriso confiante e saudável.</h5>
+              {/* <h2 className="texth2">Clinica OdontoTop</h2>
+              <h5 className="texth5">Trate sua saúde bucal com a OdontoTop: tecnologia e eficácia em tratamentos para um sorriso confiante e saudável.</h5> */}
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -85,8 +73,8 @@ const Home = () => {
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h2 className="texth2" >Second slide label</h2>
-              <h5 className="texth5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+              {/* <h2 className="texth2" >Second slide label</h2>
+              <h5 className="texth5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5> */}
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -96,16 +84,16 @@ const Home = () => {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h2 className="texth2">Third slide label</h2>
+              {/* <h2 className="texth2">Third slide label</h2>
               <h5 className="texth5">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </h5>
+              </h5> */}
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
       </Container>
 
-        <Footer />
+      <Footer />
 
     </>
   );
