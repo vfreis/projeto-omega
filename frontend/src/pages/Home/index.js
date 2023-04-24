@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
-
 import styles from "../../components/Frase.module.css"
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -14,19 +13,14 @@ import "./index.css"
 import Footer from "../Footer"
 
 
-
-
-
-
-
 const Home = () => {
   const { user, signout } = useAuth(); // obtém informações do usuário autenticado
   const navigate = useNavigate();
 
   return (
     <>
-      <Navbar className={styles.navbar} bg="primary" variant="dark" fixed="top">
-        <Container fluid>
+      <Navbar sticky="top" className={styles.navbar}  bg="primary" variant="light" >
+        <Container fluid className="cnt">
           
           
          <Navbar.Brand>Clinica OdontoTop</Navbar.Brand> 
@@ -36,13 +30,13 @@ const Home = () => {
                 
                 <Nav.Link onClick={() => navigate("/Agendamento")}>Agendamento</Nav.Link>
                 <Nav.Link href="#">Sobre Nós</Nav.Link>
-                <Nav.Link href="#">Contatos</Nav.Link>
+                <Nav.Link href="/Contatos">Contatos</Nav.Link>
                 <Nav.Link onClick={() => [signout(), navigate("/")]} >Sair</Nav.Link>
 
               </>
             ) : ( // se o usuário não estiver autenticado, renderize apenas os links de Login e Cadastro
               <>
-                <Nav.Link href="#">Contatos</Nav.Link>
+                <Nav.Link href="/contatos">Contatos</Nav.Link>
                 <Nav.Link href="/signin">Login</Nav.Link>
                 <Nav.Link href="/signup">Cadastre-se</Nav.Link>
                 <Nav.Link href="#">Sobre Nós</Nav.Link>
@@ -51,7 +45,6 @@ const Home = () => {
           </Nav>
         </Container>
       </Navbar>
-
       <Container fluid className="carousel-container">
         <Carousel  slide={false} interval={3500} variant="dark"  >
           <Carousel.Item>
@@ -59,11 +52,8 @@ const Home = () => {
               src={odontoTop3}
               alt="First slide"
               
-
             />
             <Carousel.Caption>
-              {/* <h2 className="texth2">Clinica OdontoTop</h2>
-              <h5 className="texth5">Trate sua saúde bucal com a OdontoTop: tecnologia e eficácia em tratamentos para um sorriso confiante e saudável.</h5> */}
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -73,8 +63,6 @@ const Home = () => {
               alt="Second slide"
             />
             <Carousel.Caption>
-              {/* <h2 className="texth2" >Second slide label</h2>
-              <h5 className="texth5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5> */}
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -84,10 +72,6 @@ const Home = () => {
               alt="Third slide"
             />
             <Carousel.Caption>
-              {/* <h2 className="texth2">Third slide label</h2>
-              <h5 className="texth5">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </h5> */}
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
