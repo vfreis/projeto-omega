@@ -5,6 +5,7 @@ import Signin from "../pages/Signin";
 import Signup from "../pages/Signup";
 import Agendamento from "../pages/Agendamento";
 import Contatos from "../pages/Contatos"
+import SobreNos from "../pages/SobreNos"
 
 
 const RoutesApp = () => {
@@ -18,6 +19,7 @@ const RoutesApp = () => {
           <Route exact path="/signin" element={<Signin />} />
           <Route exact path="/agendamento" element={<Agendamento />} />
           <Route exact path="/contatos" element={<Contatos />} />
+          <Route exact path="/sobrenos" element={<SobreNos />} />
          
         </Routes>
       </Fragment>

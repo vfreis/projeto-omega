@@ -1,0 +1,34 @@
+.especialidades-container {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  .especialidade {
+    display: inline-block;
+    margin: 0 40px;
+    text-align: center;
+  }
+  
+
+.about{
+  margin: 3em;
+}
+
+.p{
+  width: 220px;
+  height: 110px;
+  text-align: justify;
+  
+  
+}
+
+.esp{
+  
+    font-weight: bold;
+  
+
+  
+}

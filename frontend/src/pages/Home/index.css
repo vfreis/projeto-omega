@@ -1,24 +1,13 @@
-.imgHome{
-   
-    width: 100%;
-    height: 650px;
-    object-fit:fill
+.navtop{
+    font-size: 25px;
+    font-weight:bolder;
+    
 }
 
 
-/* 
-.texth2{
-    color: red;
-   font-style: italic;
-   font-size: 35px;
-}
-
-.texth5{
-    color: rgb(236, 236, 241);
-} */
 
 footer{
-    background-color:rgb(25, 104, 207) ;
+    background-color:rgb(103, 115, 129) ;
     color: rgb(250, 251, 252);
     padding: 10px;
     text-align: center;
@@ -26,6 +15,12 @@ footer{
 }
 
 
-.cnt{
-    height: 40px;
-}
+.page-container {
+    background-image: url('../../images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
