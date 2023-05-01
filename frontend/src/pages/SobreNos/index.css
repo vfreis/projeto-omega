@@ -28,7 +28,104 @@
 .esp{
   
     font-weight: bold;
-  
-
-  
+   
 }
+.py-5 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5%;
+}
+
+.imgsobreNos {
+ border-radius: 10%;
+ box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  flex: 2;
+}
+
+.textSobre{
+  font-size: 22px;
+}
+
+
+.equipe {
+  padding: 100px;
+  background-color: rgb(163, 230, 196);
+}
+
+
+.ulEquipe {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.liEquipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  max-width: 250px;
+}
+
+h4 {
+  margin-top: 1rem;
+}
+
+.cardMedicos {
+  width: 260px;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.cardMedicos:hover{
+  transform: translateY(-20px);
+}
+
+.pEquipe {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .especialidades-container {
+    flex-wrap: wrap;
+    margin-top: 2em;
+  }
+  .especialidade {
+    margin: 1em;
+  }
+  .p {
+    width: 100%;
+  }
+  .py-5 {
+    flex-direction: column;
+  }
+  .textSobre {
+    font-size: 18px;
+  }
+  .ulEquipe {
+    flex-wrap: wrap;
+  }
+  .liEquipe {
+    max-width: none;
+    margin: 1em 0;
+  }
+}
+/* @media only screen and (max-width: 768px) {
+  .ulEquipe {
+    padding: 0 20px;
+  }
+} */
