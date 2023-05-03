@@ -6,12 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "bootstrap/dist/css/bootstrap.css";
 
-
-
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Form from 'react-bootstrap/Form';
+import Form from "react-bootstrap/Form";
 
 const Signup = () => {
   const [nome, setNome] = useState("");
@@ -47,30 +45,21 @@ const Signup = () => {
 
     navigate("/");
     alert("Usuário cadastrado com sucesso!");
-
   };
 
   return (
     <>
       <form>
-
-
         <Navbar bg="primary" variant="dark">
           <Container fluid>
             <Navbar.Brand href="home">Clinica OdontoTop</Navbar.Brand>
-            <Nav className="ms-auto">
-
-              <Nav.Link href="#home">Contatos</Nav.Link>
-              <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
-            </Nav>
+            <Nav className="ms-auto"></Nav>
           </Container>
         </Navbar>
-       
 
         <C.Container>
-          <C.Label >SISTEMA DE CADASTRO </C.Label>
+          <C.Label>SISTEMA DE CADASTRO </C.Label>
           <C.Content>
-            
             <Input
               
               type="text"
@@ -80,18 +69,36 @@ const Signup = () => {
               value={nome}
               onChange={(e) => [setNome(e.target.value)]}
             />
+            {/* <Form.Group controlId="formNome">
+              <Form.Label>Nome</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Digite seu nome"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+              />
+            </Form.Group> */}
+
             <Input
               type="date"
               placeholder="Data de Nascimento"
               name="data_nascimento"
               id="data_nascimento"
               value={dataNascimento}
-              onChange={(e) => [setDataNascimento(e.target.value), setError("")]}
+              onChange={(e) => [
+                setDataNascimento(e.target.value),
+                setError(""),
+              ]}
             />
-            <Form.Select aria-label="Default select example" onChange={(e) => [setSexo(e.target.value), setError("")]} >
+            <Form.Select
+              aria-label="Default select example"
+              onChange={(e) => [setSexo(e.target.value), setError("")]}
+            >
               <option>Sexo</option>
               <option value="Masculino">Masculino</option>
-              <option id="sexo" value="Feminino">Feminino</option>
+              <option id="sexo" value="Feminino">
+                Feminino
+              </option>
               {/* <option value="outros">Sei lá</option> */}
             </Form.Select>
 

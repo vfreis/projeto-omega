@@ -18,13 +18,15 @@ const Contatos = () => {
 
   return (
     <>
-      <Container className="contatos">
-        <h2 className="text-center ">Nosso Squad</h2>
-
+        <div className="text-center squad-text">
+          <h2 className="textEsquad">Nosso Squad</h2>
+          <p className="text-center">Uma equipe multidisciplinar com objetivos específicos, formada para aumentar o desempenho e agilidade de um projeto.</p>
+        </div>
+      <Container  className="contatos">
         <Row xs={1} sm={2} md={3} lg={4} className="time">
           <Col>
             <Card>
-              <Card.Img variant="top" src={Prof} />
+              <Card.Img fluid="true" variant="top" src={Prof} />
               <Card.Body>
                 <Card.Title>Antonio de Oliveira</Card.Title>
                 <Card.Text>
@@ -46,11 +48,12 @@ const Contatos = () => {
           </Col>
           <Col>
             <Card>
-              <Card.Img variant="top" src={Edher} />
+              <Card.Img fluid="true" variant="top" src={Edher} />
               <Card.Body>
                 <Card.Title>Edher Masetto</Card.Title>
                 <Card.Text>
-                Desenvolvedor Front-end, tecnologias utilizadas  no projeto: HTML, CSS JAVA SCRIPT, REACT
+                  Desenvolvedor Front-end, tecnologias utilizadas no projeto:
+                  HTML, CSS JAVA SCRIPT, REACT
                 </Card.Text>
               </Card.Body>
               <Card.Footer className="btn-social">
@@ -66,7 +69,7 @@ const Contatos = () => {
           </Col>
           <Col>
             <Card>
-              <Card.Img variant="top" src={Daniel} />
+              <Card.Img fluid="true" variant="top" src={Daniel} />
               <Card.Body>
                 <Card.Title>Daniel Torres</Card.Title>
                 <Card.Text>
@@ -87,11 +90,13 @@ const Contatos = () => {
           </Col>
           <Col>
             <Card>
-              <Card.Img variant="top" src={Gabi} />
+              <Card.Img fluid="true" variant="top" src={Gabi} />
               <Card.Body>
                 <Card.Title>Gabriela de Sá</Card.Title>
                 <Card.Text>
-                 Analista de Requisitos, responsável por coletar, analisar e documentar os requisitos do projeto, garantindo que os requisitos estejam claros, completos e bem definidos.
+                  Analista de Requisitos, responsável por coletar, analisar e
+                  documentar os requisitos do projeto, garantindo que os
+                  requisitos estejam claros, completos e bem definidos.
                 </Card.Text>
               </Card.Body>
               <Card.Footer className="btn-social">
@@ -107,15 +112,21 @@ const Contatos = () => {
           </Col>
           <Col>
             <Card>
-              <Card.Img variant="top" src={falq} />
+              <Card.Img fluid="true" variant="top" src={falq} />
               <Card.Body>
                 <Card.Title>Vinicios Falqueiro</Card.Title>
                 <Card.Text>
-                 Desenvolvedor Back-end e da segurança, tecnologias utilizadas no projeto PYTHON-FLASK, MYSQL, AWS
+                  SCRUM MASTER "MACHO ALPHA"
+                  Desenvolvedor Back-end e da segurança, tecnologias utilizadas
+                  no projeto PYTHON-FLASK, MYSQL, AWS
                 </Card.Text>
               </Card.Body>
               <Card.Footer className="btn-social">
-                <Button variant="outline-primary" href="#" target="_blank">
+                <Button
+                  variant="outline-primary"
+                  href="https://www.linkedin.com/in/vfalqueiroreis/"
+                  target="_blank"
+                >
                   Linkedin
                 </Button>
               </Card.Footer>
@@ -127,7 +138,8 @@ const Contatos = () => {
               <Card.Body>
                 <Card.Title>William Rodrigues</Card.Title>
                 <Card.Text>
-                  Desenvolvedor Front-end, tecnologias utilizadas no projeto: HTML, CSS JAVA SCRIPT, REACT
+                  Desenvolvedor Front-end, tecnologias utilizadas no projeto:
+                  HTML, CSS JAVA SCRIPT, REACT
                 </Card.Text>
               </Card.Body>
               <Card.Footer className="btn-social">

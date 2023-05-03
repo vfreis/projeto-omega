@@ -35,7 +35,7 @@ const Signin = () => {
 
   return (
     <>
-      <div className="navbar-wrapper">
+      {/* <div className="navbar-wrapper">
         <Navbar bg="primary" variant="dark" sticky="top">
           <Container fluid>
             <Navbar.Brand href="home">Clinica OdontoTop</Navbar.Brand>
@@ -46,7 +46,7 @@ const Signin = () => {
             </Nav>
           </Container>
         </Navbar>
-      </div>
+      </div> */}
 
       <C.Container>
         <C.Label>SISTEMA DE LOGIN</C.Label>

@@ -83,6 +83,64 @@
 
 // export default Home;
 
+// import { useNavigate } from "react-router-dom";
+// import useAuth from "../../hooks/useAuth";
+// import Container from "react-bootstrap/Container";
+// import Nav from "react-bootstrap/Nav";
+// import Navbar from "react-bootstrap/Navbar";
+// import SobreNos from "../SobreNos";
+// import Contatos from "../Contatos";
+// import Footer from "../Footer";
+// import "./index.css";
+
+// const Home = () => {
+//   console.log("executando função Home");
+//   const { user, signout } = useAuth();
+//   const navigate = useNavigate();
+
+//   // const handleScrollToSection = (id) => {
+//   //   const section = document.getElementById(id);
+//   //   section.scrollIntoView({ behavior: "smooth" });
+//   // };
+
+//   return (
+//     <>
+//       <Container fluid={true.toString()} className="page-container">
+
+
+//         <Navbar sticky="top" variant="light" className="navtop">
+//           <Navbar className="navtop">Clinica OdontoTop</Navbar>
+//           <Nav className="ms-auto">
+//             {user ? (
+//               <>
+//                 <Nav.Link onClick={() => navigate("/Agendamento")}>
+//                   Agendamento
+//                 </Nav.Link>
+
+//                 <Nav.Text>{user.name}</Nav.Text>
+
+//                 <Nav.Link onClick={() => [signout(), navigate("/")]}>
+//                   Sair
+//                 </Nav.Link>
+//               </>
+//             ) : (
+//               <>
+//                 <Nav.Link href="/signin">Login</Nav.Link>
+//                 <Nav.Link href="/signup">Cadastre-se</Nav.Link>
+//               </>
+//             )}
+//           </Nav>
+//         </Navbar>
+//       </Container>
+//       <SobreNos id="sobre-nos" />
+//       <Contatos id="contatos" />
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default Home;
+
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Container from "react-bootstrap/Container";
@@ -94,25 +152,23 @@ import Footer from "../Footer";
 import "./index.css";
 
 const Home = () => {
+  console.log("executando função Home");
   const { user, signout } = useAuth();
   const navigate = useNavigate();
 
-  const handleScrollToSection = (id) => {
-    const section = document.getElementById(id);
-    section.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <>
-      <Container fluid className="page-container">
+      <Container fluid="true" className="page-container">
         <Navbar sticky="top" variant="light" className="navtop">
-          <Navbar className="navtop">Clinica OdontoTop</Navbar>
+          <Navbar.Brand className="navtop">Clinica OdontoTop</Navbar.Brand>
           <Nav className="ms-auto">
             {user ? (
               <>
                 <Nav.Link onClick={() => navigate("/Agendamento")}>
                   Agendamento
                 </Nav.Link>
+
+                
 
                 <Nav.Link onClick={() => [signout(), navigate("/")]}>
                   Sair

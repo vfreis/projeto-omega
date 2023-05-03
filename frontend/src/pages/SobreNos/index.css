@@ -30,6 +30,7 @@
     font-weight: bold;
    
 }
+
 .py-5 {
   display: flex;
   flex-direction: row;
@@ -52,7 +53,7 @@
 
 
 .equipe {
-  padding: 100px;
+  padding: 7%;
   background-color: rgb(163, 230, 196);
 }
 
@@ -82,7 +83,7 @@ h4 {
 .cardMedicos {
   width: 260px;
   max-width: 300px;
-  height: auto;
+  
   object-fit: cover;
   border-radius: 10%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);

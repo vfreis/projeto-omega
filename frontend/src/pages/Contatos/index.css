@@ -6,12 +6,14 @@
   
 
 .contatos {
-  margin-top: 150px;
+  margin-top: 3%;
 }  
 
 .time{
  margin: 10px ;
+ 
 }
+
 
 .contanier{
   display: flex;
@@ -25,6 +27,7 @@
   border-radius: 10%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   
+  
 }
 
 
@@ -34,4 +37,14 @@
 }
 .card:hover ~ .card{
   left: 50px;
+}
+
+.squad-text {
+  margin-top: 3%;
+  text-align: center;
+  
+}
+
+.textEsquad{
+  font-weight: bold;
 }

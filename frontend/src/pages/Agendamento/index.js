@@ -122,7 +122,7 @@ const Agendamento = () => {
   return (
     <>
       <Navbar bg="primary" variant="dark">
-        <Container fluid>
+        <Container fluid="true">
           <Navbar.Brand>Clinica OdontoTop</Navbar.Brand>
           <Nav className="ms-auto">
             {user ? (

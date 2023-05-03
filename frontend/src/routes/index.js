@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Fragment, useRoutes } from "react";
+import { BrowserRouter, Route, Routes, Router } from "react-router-dom";
 import Home from "../pages/Home";
 import Signin from "../pages/Signin";
 import Signup from "../pages/Signup";
@@ -19,8 +19,7 @@ const RoutesApp = () => {
           <Route exact path="/signin" element={<Signin />} />
           <Route exact path="/agendamento" element={<Agendamento />} />
           <Route exact path="/contatos" element={<Contatos />} />
-          <Route exact path="/sobrenos" element={<SobreNos />} />
-         
+          <Route exact path="/sobrenos" element={<SobreNos />} />      
         </Routes>
       </Fragment>
     </BrowserRouter>

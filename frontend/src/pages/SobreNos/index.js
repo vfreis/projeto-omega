@@ -65,7 +65,7 @@ const AboutUs = () => {
         </div>
         <div></div>
       </section>
-      <Container className="py-5">
+      <Container fluid="true" className="py-5">
         <Row>
           <Col md={6} className="my-auto">
             <h2 className="mb-4 text-center esp">Sobre nós</h2>
@@ -84,35 +84,36 @@ const AboutUs = () => {
             </p>
           </Col>
           <Col md={6}>
-            <img className="imgsobreNos" src={medi} alt="Clínica Odontop" fluid />
+            <img fluid="true" className="imgsobreNos" src={medi} alt="Clínica Odontop" fluid />
           </Col>
         </Row>
       </Container>
       <section className="equipe">
         <div className="divEquipe">
-          <h3 className="text-center esp">Nossa Equipe de Médicos</h3>
+          <h3 className="text-center esp ">Conheça Nossa Equipe de Médicos</h3>
+          <p className="text-center">Contamos com uma equipe qualificada e profissional</p>
           <ul className="ulEquipe">
             <li className="liEquipe">
-              <img className="cardMedicos" src={d1} alt="" />
-              <h4>Dr. João</h4>
+              <img fluid="true" className="cardMedicos" src={d1} alt="" />
+              <h4>Dra. Ana Konda</h4>
               <p className="pEquipe">Ortodontista</p>
               <p className="pEquipe">CRM: 12345</p>
             </li>
             <li className="liEquipe">
               <img className="cardMedicos" src={d2} alt="" />
-              <h4>Dra. Maria</h4>
+              <h4>Dr. Jacinto Rego</h4>
               <p className="pEquipe">Endodontista</p>
               <p className="pEquipe">CRM: 67890</p>
             </li>
             <li className="liEquipe">
-              <img className="cardMedicos" src={d3} alt=""/>
-              <h4>Dr. José</h4>
+              <img fluid="true" className="cardMedicos" src={d3} alt=""/>
+              <h4>Dra. Mila Ambuza </h4>
               <p className="pEquipe">Cirurgião Dentista</p>
               <p className="pEquipe">CRM: 54321</p>
             </li>
             <li className="liEquipe">
             <img className="cardMedicos" src={d3} alt=""/>
-              <h4>Dr. José</h4>
+              <h4>Dr. Tico Meria</h4>
               <p className="pEquipe">Cirurgião Dentista</p>
               <p className="pEquipe">CRM: 54321</p>
             </li>
