@@ -15,3 +15,5 @@ export const signupApi = async (data) => {
 export const schedule = async (data) => {
   return await axiosInstance.post("agenda", data);
 };
+
+

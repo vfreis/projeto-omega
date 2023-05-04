@@ -121,29 +121,30 @@ const Agendamento = () => {
 
   return (
     <>
-      <Navbar bg="primary" variant="dark">
-        <Container fluid="true">
-          <Navbar.Brand>Clinica OdontoTop</Navbar.Brand>
+      <Container fluid className="page-container">
+        <Navbar sticky="top" variant="light" className="navtop">
+          <Navbar.Brand  className="navtop">Clinica OdontoTop</Navbar.Brand>
           <Nav className="ms-auto">
             {user ? (
               <>
-                <Nav.Link onClick={() => navigate("/home")}>Home</Nav.Link>
-                <Nav.Link onClick={() => navigate("/agendamento")}>
-                  Agendamento
+                <Nav.Link onClick={() => navigate("/home")}>
+                  Home
                 </Nav.Link>
-                <Nav.Link onClick={() => [signout(), navigate("/")]}>
+                
+                <Nav.Link onClick={() => [signout(), navigate("/")]} className="navtop">
                   Sair
                 </Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link href="/login">Login</Nav.Link>
-                <Nav.Link href="/cadastro">Cadastro</Nav.Link>
+                <Nav.Link href="/signin" className="navtop">Login</Nav.Link>
+                <Nav.Link href="/signup" className="navtop">Cadastre-se</Nav.Link>
               </>
             )}
           </Nav>
-        </Container>
-      </Navbar>
+        </Navbar>
+      </Container>
+
       <div className="home">
         <h1 className="text-center mb-4">Agendamento de Consulta Médica</h1>
         <div className="row">
