@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Container from "react-bootstrap/Container";
@@ -25,16 +24,24 @@ const Home = () => {
                   Agendamento
                 </Nav.Link>
                 <Nav.Link className="navtop">{user.displayName}</Nav.Link>
-                <Nav.Link onClick={() => [signout(), navigate("/")]} className="navtop">
+                <Nav.Link
+                  onClick={() => [signout(), navigate("/")]}
+                  className="navtop"
+                >
                   Sair
                 </Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link href="/signin" className="navtop">Login</Nav.Link>
-                <Nav.Link href="/signup" className="navtop">Cadastre-se</Nav.Link>
+                <Nav.Link href="/signin" className="navtop">
+                  Login
+                </Nav.Link>
+                <Nav.Link href="/signup" className="navtop">
+                  Cadastre-se
+                </Nav.Link>
               </>
             )}
+          
           </Nav>
         </Navbar>
       </Container>
