@@ -43,7 +43,9 @@
 @media screen and (max-width: 768px) {
     .page-container {
       height: 100vh;
+      
     }
+  
 }
   
 

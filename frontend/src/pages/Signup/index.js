@@ -10,6 +10,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
+import { format } from "date-fns";
 
 const Signup = () => {
   const [nome, setNome] = useState("");
@@ -20,14 +21,21 @@ const Signup = () => {
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  
 
   const { signup } = useAuth();
 
   const handleSignup = async () => {
-    if (!nome | !dataNascimento | !sexo | !email | !telefone | !senha) {
+    if (!nome || !dataNascimento || !sexo || !email || !telefone || !senha) {
       setError("Preencha todos os campos");
+
       return;
     }
+
+    // const formattedDataNascimento = format(
+    //   new Date(dataNascimento),
+    //   "dd/MM/yyyy"
+    // );
 
     const res = await signup(
       nome,

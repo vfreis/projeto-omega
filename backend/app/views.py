@@ -37,7 +37,9 @@ def home():
 def inserircadastro():
     data = request.json
     nome = data.get('nome')
-    data_nascimento = data.get('data_nascimento')
+
+    data_nascimento = data.get('dataNascimento')
+    print(data_nascimento)
     sexo = data.get('sexo')
     email = data.get('email')
     telefone = data.get('telefone')
@@ -64,6 +66,7 @@ def post_agenda():
     unidade = data.get('unidade')
     profissional = data.get('profissional')
     data_ = data.get('data')
+    print(data_)
     hora = data.get('hora')
     id_usuario = data.get('id_usuario')
     try:

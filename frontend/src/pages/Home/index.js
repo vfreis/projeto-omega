@@ -23,7 +23,7 @@ const Home = () => {
                 <Nav.Link onClick={() => navigate("/Agendamento")}>
                   Agendamento
                 </Nav.Link>
-                <Nav.Link className="navtop">{user.displayName}</Nav.Link>
+               
                 <Nav.Link
                   onClick={() => [signout(), navigate("/")]}
                   className="navtop"

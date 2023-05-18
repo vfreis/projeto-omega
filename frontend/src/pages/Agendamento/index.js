@@ -9,6 +9,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { schedule } from "../../services/api";
+import "./index.css";
 
 const Agendamento = () => {
   const [estado, setEstado] = useState("");
@@ -17,6 +18,8 @@ const Agendamento = () => {
   const [unidade, setUnidade] = useState("");
   const [profissional, setProfissional] = useState("");
   const [data, setData] = useState("");
+  const [horario, setHorario] = useState("");
+
 
   const { user, signout } = useAuth();
   const navigate = useNavigate();
@@ -121,7 +124,7 @@ const Agendamento = () => {
 
   return (
     <>
-      <Container fluid className="page-container">
+      <Container fluid className="page-container ">
         <Navbar sticky="top" variant="light" className="navtop">
           <Navbar.Brand  className="navtop">Clinica OdontoTop</Navbar.Brand>
           <Nav className="ms-auto">
@@ -145,8 +148,8 @@ const Agendamento = () => {
         </Navbar>
       </Container>
 
-      <div className="home">
-        <h1 className="text-center mb-4">Agendamento de Consulta Médica</h1>
+      <div className="form-container">
+        <h1 className="text-center">Agendamento de Consulta Médica</h1>
         <div className="row">
           <div className="col-md-6 mb-3">
             <Form.Select
@@ -220,6 +223,9 @@ const Agendamento = () => {
               value={data}
               onChange={handleDataChange}
             />
+          </div>
+          <div>
+            
           </div>
         </div>
         <div className="text-center">
