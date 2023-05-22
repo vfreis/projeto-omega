@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import SobreNos from "../SobreNos";
 import Contatos from "../Contatos";
 import Footer from "../Footer";
+import Update from "../Update";
 import "./index.css";
 
 const Home = () => {
@@ -22,6 +23,10 @@ const Home = () => {
               <>
                 <Nav.Link onClick={() => navigate("/Agendamento")}>
                   Agendamento
+                </Nav.Link>
+
+                <Nav.Link onClick={() => navigate("/Update")}>
+                  Editar Dados
                 </Nav.Link>
                
                 <Nav.Link

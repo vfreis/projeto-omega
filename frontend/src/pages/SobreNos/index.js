@@ -95,25 +95,25 @@ const AboutUs = () => {
           <ul className="ulEquipe">
             <li className="liEquipe">
               <img fluid="true" className="cardMedicos" src={d1} alt="" />
-              <h4>Dra. Ana Konda</h4>
+              <h4>Dra. Mia Malkova</h4>
               <p className="pEquipe">Ortodontista</p>
               <p className="pEquipe">CRM: 12345</p>
             </li>
             <li className="liEquipe">
               <img className="cardMedicos" src={d2} alt="" />
-              <h4>Dr. Jacinto Rego</h4>
+              <h4>Dr. Paulo Ribeiro</h4>
               <p className="pEquipe">Endodontista</p>
               <p className="pEquipe">CRM: 67890</p>
             </li>
             <li className="liEquipe">
               <img fluid="true" className="cardMedicos" src={d3} alt=""/>
-              <h4>Dra. Mila Ambuza </h4>
+              <h4>Dra. Gina Valentina </h4>
               <p className="pEquipe">Cirurgião Dentista</p>
               <p className="pEquipe">CRM: 54321</p>
             </li>
             <li className="liEquipe">
             <img className="cardMedicos" src={d3} alt=""/>
-              <h4>Dr. Tico Meria</h4>
+              <h4>Dra. Carol Fernandez</h4>
               <p className="pEquipe">Cirurgião Dentista</p>
               <p className="pEquipe">CRM: 54321</p>
             </li>

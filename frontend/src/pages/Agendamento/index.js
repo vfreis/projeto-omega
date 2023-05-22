@@ -20,7 +20,6 @@ const Agendamento = () => {
   const [data, setData] = useState("");
   const [horario, setHorario] = useState("");
 
-
   const { user, signout } = useAuth();
   const navigate = useNavigate();
 
@@ -50,6 +49,10 @@ const Agendamento = () => {
     setData(event.target.value);
   };
 
+  const handleHorarioChange = (event) => {
+    setHorario(event.target.value);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const values = {
@@ -59,38 +62,29 @@ const Agendamento = () => {
       unidade,
       profissional,
       data,
-      hora: "00:00:00",
+      hora:"00:00"
     };
 
-    // const res = await schedule(values);
-
-    // if (res.data === "calendar created") {
-    //   alert("Agendamento cadastrado com sucesso.");
-    //   navigate("/home");
-    // } else {
-    //   alert("Não foi possível agendar, tente novamente.");
-    // }
     if (
       !values.estado ||
       !values.especialidade ||
       !values.regiao ||
       !values.unidade ||
       !values.profissional ||
-      !values.data
+      !values.data 
     ) {
       alert("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
-  
+
     const res = await schedule(values);
-  
+
     if (res.data === "calendar created") {
       alert("Agendamento cadastrado com sucesso.");
       navigate("/home");
     } else {
       alert("Não foi possível agendar, tente novamente.");
     }
-  
   };
 
   const lugaresPorRegiao = {
@@ -126,22 +120,27 @@ const Agendamento = () => {
     <>
       <Container fluid className="page-container ">
         <Navbar sticky="top" variant="light" className="navtop">
-          <Navbar.Brand  className="navtop">Clinica OdontoTop</Navbar.Brand>
+          <Navbar.Brand className="navtop">Clinica OdontoTop</Navbar.Brand>
           <Nav className="ms-auto">
             {user ? (
               <>
-                <Nav.Link onClick={() => navigate("/home")}>
-                  Home
-                </Nav.Link>
-                
-                <Nav.Link onClick={() => [signout(), navigate("/")]} className="navtop">
+                <Nav.Link onClick={() => navigate("/home")}>Home</Nav.Link>
+
+                <Nav.Link
+                  onClick={() => [signout(), navigate("/")]}
+                  className="navtop"
+                >
                   Sair
                 </Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link href="/signin" className="navtop">Login</Nav.Link>
-                <Nav.Link href="/signup" className="navtop">Cadastre-se</Nav.Link>
+                <Nav.Link href="/signin" className="navtop">
+                  Login
+                </Nav.Link>
+                <Nav.Link href="/signup" className="navtop">
+                  Cadastre-se
+                </Nav.Link>
               </>
             )}
           </Nav>
@@ -173,7 +172,9 @@ const Agendamento = () => {
               <option value="Periodontia">Periodontia</option>
               <option value="Implatodontia">Implatodontia</option>
               <option value="Odontologia Estética">Odontologia Estética</option>
-              <option value="Odontologia Preventiva">Odontologia Preventiva</option>
+              <option value="Odontologia Preventiva">
+                Odontologia Preventiva
+              </option>
             </Form.Select>
           </div>
           <div className="col-md-6 mb-3">
@@ -205,15 +206,17 @@ const Agendamento = () => {
               </Form.Select>
             )}
           </div>
+
           <div className="col-md-6 mb-3">
             <Form.Select
               aria-label="Default select example"
               onChange={handleProfissionalChange}
             >
               <option>Profissional</option>
-              <option id="profissional" value="Profissional">
-                Todos os Profissionais
-              </option>
+              <option value="Dra Gina Valentina">Dra Gina Valentina</option>
+              <option value="Dr Paulo Ribeiro">Dr Paulo Ribeiro</option>
+              <option value="Dra Carol Fernandez">Dra. Carol Fernandez</option>
+              <option value="Dra Mia Malkova">Dra. Mia Malkova</option>
             </Form.Select>
           </div>
           <div className="col-md-6 mb-3">
@@ -224,9 +227,7 @@ const Agendamento = () => {
               onChange={handleDataChange}
             />
           </div>
-          <div>
-            
-          </div>
+          
         </div>
         <div className="text-center">
           <Button
