@@ -5,8 +5,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh; 
-  background-color: rgba(140, 198, 236, 0.603);
+  height: 00vh; 
+  margin: -200px auto 0;
+  
 `;
 
 export const Content = styled.div`
@@ -16,18 +17,18 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 90%;
-  max-width: 350px;
-  box-shadow: 20px 20px 30px #0003;
-  background-color:  rgba(140, 198, 236, 0.603);
+  width: 100%;
+  max-width: 400px;
+  
+ 
   padding: 25px;
   border-radius: 25px;
 `;
 
 export const Label = styled.label`
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 600;
-  color: #676767;
+  color: #171717;
 `;
 
 export const LabelSignin = styled.label`

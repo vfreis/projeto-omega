@@ -5,6 +5,7 @@ import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "bootstrap/dist/css/bootstrap.css";
+import "./index.css";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -23,7 +24,7 @@ const Signup = () => {
   const navigate = useNavigate();
   
 
-  const { signup } = useAuth();
+  const { signin, user, signout } = useAuth();
 
   const handleSignup = async () => {
     if (!nome || !dataNascimento || !sexo || !email || !telefone || !senha) {
@@ -32,12 +33,9 @@ const Signup = () => {
       return;
     }
 
-    // const formattedDataNascimento = format(
-    //   new Date(dataNascimento),
-    //   "dd/MM/yyyy"
-    // );
+  
 
-    const res = await signup(
+    const res = await Signup(
       nome,
       dataNascimento,
       sexo,
@@ -57,13 +55,41 @@ const Signup = () => {
 
   return (
     <>
-      <form>
-        <Navbar bg="primary" variant="dark">
-          <Container fluid>
-            <Navbar.Brand href="home">Clinica OdontoTop</Navbar.Brand>
-            <Nav className="ms-auto"></Nav>
-          </Container>
+     <Container fluid className="page-container">
+        <Navbar sticky="top" variant="light" className="navtop">
+          <Navbar.Brand className="navtop">Clinica OdontoTop</Navbar.Brand>
+          <Nav className="ms-auto">
+            {user ? (
+              <>
+                <Nav.Link onClick={() => navigate("/Agendamento")}>
+                  Agendamento
+                </Nav.Link>
+
+                <Nav.Link onClick={() => navigate("/Update")}>
+                  Editar Dados
+                </Nav.Link>
+               
+                <Nav.Link
+                  onClick={() => [signout(), navigate("/")]}
+                  className="navtop"
+                >
+                  Sair
+                </Nav.Link>
+              </>
+            ) : (
+              <>
+                
+                <Nav.Link href="/home" className="navtop">
+                  Home
+                </Nav.Link>
+              </>
+            )}
+          
+          </Nav>
         </Navbar>
+      </Container>
+      <form>
+       
 
         <C.Container>
           <C.Label>SISTEMA DE CADASTRO </C.Label>

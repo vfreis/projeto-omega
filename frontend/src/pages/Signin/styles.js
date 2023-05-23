@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   height: 0vh; 
-  
+  margin: -200px auto 0;
   
   
 `;
@@ -20,9 +20,9 @@ export const Content = styled.form`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  box-shadow: 20px 20px 30px #0003;
-  background-color:  rgba(140, 198, 236, 0.603);
-  max-width: 405px;
+  
+  
+  max-width: 435px;
   padding: 50px;
   gap: 20px;
   border-radius: 25px;
