@@ -8,10 +8,10 @@ import especialidade1 from "../../images/especialidade1.png";
 import especialidade2 from "../../images/especialidade2.png";
 import especialidade3 from "../../images/especialidade3.png";
 import medi from "../../images/medi.jpg";
-import d1 from "../../images/d1.jpg";
-import d2 from "../../images/d2.jpg";
-import d3 from "../../images/d3.jpg";
-
+import Mia from "../../images/Mia.jpg";
+import Paulo from "../../images/Paulo.jpg";
+import Carol from "../../images/Carol.jpg";
+import Gina from "../../images/Gina.jpg";
 
 const AboutUs = () => {
   return (
@@ -84,7 +84,7 @@ const AboutUs = () => {
             </p>
           </Col>
           <Col md={6}>
-            <img fluid="true" className="imgsobreNos" src={medi} alt="Clínica Odontop" fluid />
+            <img fluid="true" className="imgsobreNos" src={medi} alt="Clínica Odontop"  />
           </Col>
         </Row>
       </Container>
@@ -94,27 +94,27 @@ const AboutUs = () => {
           <p className="text-center">Contamos com uma equipe qualificada e profissional</p>
           <ul className="ulEquipe">
             <li className="liEquipe">
-              <img fluid="true" className="cardMedicos" src={d1} alt="" />
+              <img fluid="true" className="cardMedicos" src={Mia} alt="" />
               <h4>Dra. Mia Malkova</h4>
               <p className="pEquipe">Ortodontista</p>
               <p className="pEquipe">CRM: 12345</p>
             </li>
             <li className="liEquipe">
-              <img className="cardMedicos" src={d2} alt="" />
+              <img className="cardMedicos" src={Paulo} alt="" />
               <h4>Dr. Paulo Ribeiro</h4>
-              <p className="pEquipe">Endodontista</p>
+              <p className="pEquipe">Cirurgião Dentista</p>
               <p className="pEquipe">CRM: 67890</p>
             </li>
             <li className="liEquipe">
-              <img fluid="true" className="cardMedicos" src={d3} alt=""/>
+              <img fluid="true" className="cardMedicos" src={Gina} alt=""/>
               <h4>Dra. Gina Valentina </h4>
-              <p className="pEquipe">Cirurgião Dentista</p>
+              <p className="pEquipe">Periodontia</p>
               <p className="pEquipe">CRM: 54321</p>
             </li>
             <li className="liEquipe">
-            <img className="cardMedicos" src={d3} alt=""/>
+            <img className="cardMedicos" src={Carol} alt=""/>
               <h4>Dra. Carol Fernandez</h4>
-              <p className="pEquipe">Cirurgião Dentista</p>
+              <p className="pEquipe">Reabilitação Oral</p>
               <p className="pEquipe">CRM: 54321</p>
             </li>
           </ul>

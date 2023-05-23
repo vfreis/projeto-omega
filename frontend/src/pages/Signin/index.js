@@ -8,8 +8,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
+
+import "./index.css";
+
 const Signin = () => {
-  const { signin } = useAuth();
+  const { signin, user, signout } = useAuth();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -35,18 +38,39 @@ const Signin = () => {
 
   return (
     <>
-      {/* <div className="navbar-wrapper">
-        <Navbar bg="primary" variant="dark" sticky="top">
-          <Container fluid>
-            <Navbar.Brand href="home">Clinica OdontoTop</Navbar.Brand>
-            <Nav className="ms-auto">
-              <Nav.Link href="#home">Contatos</Nav.Link>
-              <Nav.Link href="#pricing">Sobre Nós</Nav.Link>
-              <Nav.Link href="/signup">Cadastre-se</Nav.Link>
-            </Nav>
-          </Container>
+      <Container fluid className="page-container">
+        <Navbar sticky="top" variant="light" className="navtop">
+          <Navbar.Brand className="navtop">Clinica OdontoTop</Navbar.Brand>
+          <Nav className="ms-auto">
+            {user ? (
+              <>
+                <Nav.Link onClick={() => navigate("/Agendamento")}>
+                  Agendamento
+                </Nav.Link>
+
+                <Nav.Link onClick={() => navigate("/Update")}>
+                  Editar Dados
+                </Nav.Link>
+               
+                <Nav.Link
+                  onClick={() => [signout(), navigate("/")]}
+                  className="navtop"
+                >
+                  Sair
+                </Nav.Link>
+              </>
+            ) : (
+              <>
+                
+                <Nav.Link href="/signup" className="navtop">
+                  Cadastre-se
+                </Nav.Link>
+              </>
+            )}
+          
+          </Nav>
         </Navbar>
-      </div> */}
+      </Container>
 
       <C.Container>
         <C.Label>SISTEMA DE LOGIN</C.Label>

@@ -116,7 +116,6 @@ const Contatos = () => {
               <Card.Body>
                 <Card.Title>Vinicios Falqueiro</Card.Title>
                 <Card.Text>
-                  SCRUM MASTER "MACHO ALPHA"
                   Desenvolvedor Back-end e da segurança, tecnologias utilizadas
                   no projeto PYTHON-FLASK, MYSQL, AWS
                 </Card.Text>
