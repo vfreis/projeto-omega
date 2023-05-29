@@ -21,7 +21,7 @@ def get_usuario():
 
 def login(_email,_senha):
     usuario_var = Usuario.query.filter_by(email = _email).first()
-    return 'Logged In' if usuario_var and usuario_var.senha == _senha else 'Fail to login'
+    return True if usuario_var and usuario_var.senha == _senha else 'Fail to login'
 #teste
 # adc_usuario('vinicios', '17/07/1991', 'm', 'email', '11999999999', '123456798')
 # adc_usuario('gabriela', '17/07/1991', 'm', 'email', '11888888888', '123456798')
