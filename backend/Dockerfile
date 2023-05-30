@@ -8,7 +8,7 @@ FROM python:3.9
 WORKDIR /backend/app
 
 # install the dependencies and packages in the requirements file
-RUN pip install -r requirements.txt
+RUN pip install -r /backend/requirements.txt
 
 # copy every content from the local file to the image
 COPY . /app
