@@ -75,14 +75,17 @@ def post_agenda():
         return 'failed'
 
     # _estado, _especialidade, _regiao, _unidade, _profissional, _data, _hora, _id_usuario
-@views.route('/teste', methods = ['GET', 'POST'])
+# @views.route('/teste', methods = ['GET', 'POST'])
+# def teste():
+#     pass
+#     #teste
+#     #return(adc_usuario('gabi', '1999-07-26', 'f', 'f.@teste.com', '1111111111', '123456'))
+#     #return(delete_usuario('3'))
+
+#     # return(adc_agenda('Sao paulo', 'odonto', 'oeste', 'barra funda', 'gabi','2023-04-21','15:00', 4 ))
+#     #return(delete_agenda(3))
+#     #return(select_agenda())
+
+@views.route('/Upadate', methods = ['GET', 'POST'])
 def teste():
-    pass
-    #teste
-    #return(adc_usuario('gabi', '1999-07-26', 'f', 'f.@teste.com', '1111111111', '123456'))
-    #return(delete_usuario('3'))
-
-    # return(adc_agenda('Sao paulo', 'odonto', 'oeste', 'barra funda', 'gabi','2023-04-21','15:00', 4 ))
-    #return(delete_agenda(3))
-    #return(select_agenda())
-
+    return select_agenda(id)
